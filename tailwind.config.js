@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'auth-bg-image': "url('src/assets/img/auth-bg.png')"
+      }
+    },
   },
   plugins: [],
   prefix: 'tw-'
