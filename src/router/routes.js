@@ -2,7 +2,13 @@
 const routes = [
   {
     path: '/',
+    name: 'generate-password',
     component: () => import('pages/auth/CreatePassword.vue'),
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('pages/auth/LoginScreen.vue'),
   },
   {
     path: '/user',
