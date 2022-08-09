@@ -37,6 +37,7 @@
           clickable
           active-class="bg-info"
           to="/dashboard"
+          class="tw-pl-10 tw-mt-3"
         >
           <q-item-section
             avatar
@@ -46,9 +47,93 @@
             </svg>
           </q-item-section>
           <q-item-section>
-            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">{{ dashboardLink.title }}</q-item-label>
+            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Dashboard</q-item-label>
           </q-item-section>
         </q-item>      
+        <q-item
+          exact
+          clickable
+          active-class="bg-info"
+          to="/classes"
+          class="tw-pl-10 tw-mt-3"
+        >
+          <q-item-section
+            avatar
+          >
+            <svg width="24" height="24" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.66732 3.62496V20.5416H22.959V4.22913C22.959 3.89545 22.6885 3.62496 22.3548 3.62496H9.66732ZM8.45898 3.62496H7.85482C6.8538 3.62496 6.04232 4.43644 6.04232 5.43746V21.1456C6.5472 20.7663 7.17476 20.5416 7.85482 20.5416H8.45898V3.62496ZM5.0167 24.5995C4.90399 24.4898 4.83398 24.3364 4.83398 24.1666V5.43746C4.83398 3.7691 6.18646 2.41663 7.85482 2.41663H22.3548C23.3558 2.41663 24.1673 3.22811 24.1673 4.22913V24.7708C24.1673 25.7718 23.3558 26.5833 22.3548 26.5833H7.85482C6.55081 26.5833 5.43978 25.757 5.0167 24.5995ZM22.959 21.75H7.85482C6.8538 21.75 6.04232 22.5614 6.04232 23.5625C6.04232 24.5635 6.8538 25.375 7.85482 25.375H22.3548C22.6885 25.375 22.959 25.1045 22.959 24.7708V21.75ZM12.6882 12.0833C12.3545 12.0833 12.084 11.8128 12.084 11.4791C12.084 11.1455 12.3545 10.875 12.6882 10.875H19.9382C20.2718 10.875 20.5423 11.1455 20.5423 11.4791C20.5423 11.8128 20.2718 12.0833 19.9382 12.0833H12.6882ZM12.6882 9.66663C12.3545 9.66663 12.084 9.39613 12.084 9.06246C12.084 8.72879 12.3545 8.45829 12.6882 8.45829H17.5215C17.8552 8.45829 18.1257 8.72879 18.1257 9.06246C18.1257 9.39613 17.8552 9.66663 17.5215 9.66663H12.6882Z" fill="white"/>
+            </svg>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Classes</q-item-label>
+          </q-item-section>
+        </q-item>      
+        <q-item
+          exact
+          clickable
+          active-class="bg-info"
+          to="/payment"
+          class="tw-pl-10 tw-mt-3"
+        >
+          <q-item-section
+            avatar
+          >
+            <svg width="24" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.7188 16.875C17.2528 16.875 16.875 17.2528 16.875 17.7188C16.875 18.1847 17.2528 18.5625 17.7188 18.5625H21.0938C21.5597 18.5625 21.9375 18.1847 21.9375 17.7188C21.9375 17.2528 21.5597 16.875 21.0938 16.875H17.7188Z" fill="white"/>
+              <path d="M1.6875 8.4375C1.6875 6.57354 3.19854 5.0625 5.0625 5.0625H21.9375C23.8015 5.0625 25.3125 6.57354 25.3125 8.4375V18.5625C25.3125 20.4265 23.8015 21.9375 21.9375 21.9375H5.0625C3.19854 21.9375 1.6875 20.4265 1.6875 18.5625V8.4375ZM23.625 8.4375C23.625 7.50553 22.8695 6.75 21.9375 6.75H5.0625C4.13053 6.75 3.375 7.50553 3.375 8.4375V10.125H23.625V8.4375ZM3.375 18.5625C3.375 19.4945 4.13053 20.25 5.0625 20.25H21.9375C22.8695 20.25 23.625 19.4945 23.625 18.5625V11.8125H3.375V18.5625Z" fill="white"/>
+            </svg>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Payments</q-item-label>
+          </q-item-section>
+        </q-item>      
+        <q-item
+          exact
+          clickable
+          active-class="bg-info"
+          to="/rewards"
+          class="tw-pl-10 tw-mt-3"
+        >
+          <q-item-section
+            avatar
+          >
+            <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.988 17.332L4.84 23.9613L3.52 20.7665H0L4.488 15.2154C5.368 15.6947 6.292 15.7745 6.952 15.8944C7.172 15.9343 7.436 15.9742 7.568 15.9742C7.656 16.0142 7.876 16.1739 8.008 16.2937C8.536 16.6132 9.196 17.0924 9.988 17.332ZM18.392 15.2154C17.512 15.6947 16.588 15.7745 15.928 15.8944C15.708 15.9343 15.4 15.9742 15.268 15.9742C15.18 16.0142 14.96 16.1739 14.828 16.2937C14.344 16.6132 13.728 17.0924 12.892 17.332L18.04 23.9613L19.36 20.7665H22.88L18.392 15.2154ZM11.44 4.79227C9.724 4.79227 8.36 6.03027 8.36 7.58776C8.36 9.14524 9.724 10.3832 11.44 10.3832C13.156 10.3832 14.52 9.14524 14.52 7.58776C14.52 6.03027 13.156 4.79227 11.44 4.79227ZM19.8 7.58776C19.8 8.54621 18.656 9.30498 18.26 10.1436C17.864 11.0222 18.084 12.3002 17.336 12.9391C16.632 13.5781 15.224 13.4183 14.256 13.7778C13.332 14.1372 12.496 15.1755 11.44 15.1755C10.384 15.1755 9.548 14.1372 8.624 13.7778C7.656 13.4183 6.248 13.618 5.544 12.9391C4.84 12.3002 5.016 11.0222 4.62 10.1436C4.224 9.30498 3.08 8.54621 3.08 7.58776C3.08 6.6293 4.224 5.87053 4.62 5.03188C5.016 4.1533 4.796 2.87536 5.544 2.23639C6.248 1.59742 7.656 1.75716 8.624 1.39774C9.548 1.03832 10.384 0 11.44 0C12.496 0 13.332 1.03832 14.256 1.39774C15.224 1.75716 16.632 1.55749 17.336 2.23639C18.04 2.87536 17.864 4.1533 18.26 5.03188C18.656 5.87053 19.8 6.6293 19.8 7.58776ZM17.16 7.58776C17.16 4.7124 14.608 2.39613 11.44 2.39613C8.272 2.39613 5.72 4.7124 5.72 7.58776C5.72 10.4631 8.272 12.7794 11.44 12.7794C14.608 12.7794 17.16 10.4631 17.16 7.58776Z" fill="white"/>
+            </svg>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Rewards</q-item-label>
+          </q-item-section>
+        </q-item>      
+        <q-item
+          exact
+          clickable
+          active-class="bg-info"
+          to="/helps"
+          class="tw-pl-10 tw-mt-3"
+        >
+          <q-item-section
+            avatar
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM13 18H11V16H13V18ZM13 13.86V15H11V13C11 12.448 11.448 12 12 12C13.103 12 14 11.103 14 10C14 8.897 13.103 8 12 8C10.897 8 10 8.897 10 10H8C8 7.79 9.79 6 12 6C14.21 6 16 7.79 16 10C16 11.862 14.722 13.413 13 13.86Z" fill="white"/>
+            </svg>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Helps</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item
+          v-ripple
+          clickable
+          @click="logout()"
+          class="tw-w-full tw-mt-44 tw-pl-12"
+        >
+          <q-item-section class="tw-text-white" avatar>
+            <q-icon name="logout" />
+          </q-item-section>
+          <q-item-section class="tw-text-xs -tw-ml-5 sm:tw-text-sm tw-text-white">Logout</q-item-section>
+        </q-item>     
       </q-list>
     </q-drawer>
 
@@ -61,11 +146,6 @@
 <script>
 import { defineComponent, ref } from 'vue'
 
-const dashboardLink = {
-  title: 'Home',
-  to: { name: 'student-dashboard' }
-}
-
 export default defineComponent({
   name: 'MainLayout',
   setup () {
@@ -75,8 +155,7 @@ export default defineComponent({
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-      dashboardLink
+      }
     }
   }
 })
