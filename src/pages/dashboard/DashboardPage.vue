@@ -1,30 +1,40 @@
 <template>
   <div class="tw-h-2/3">
-    <div class="tw-border-2 tw-border-gray-300 tw-py-5">
+    <div class="tw-border-2 tw-py-10 tw-mx-4 tw-mt-5 tw-rounded-lg tw-px-10">
       <q-linear-progress
         :value="progress"
         rounded
-        color="purple"
-        track-color="orange"
+        size="25px"
+        color="accent"
+        track-color="grey3"
         class="q-mt-sm"
-      />
+      >
+        <div class="absolute-full flex flex-center">
+          <q-badge color="white" text-color="accent" :label="progressLabel" />
+        </div>
+      </q-linear-progress>
     </div>
     <q-card flat class="tw-mx-auto">
       <q-card-section>
-        <ChartSection
-          ref="chart"
-          chartId="comparisons-chart"
-          type="bar"
-          :data="chartData"
-          :options="options"
-        />
+        <div class="tw-border-2 tw-rounded-lg tw-p-10">
+          <div class="tw-text-gray-600 tw-text-base">
+            First semester attendance
+          </div>
+          <ChartSection
+            ref="chart"
+            chartId="comparisons-chart"
+            type="bar"
+            :data="chartData"
+            :options="options"
+          />
+        </div>
       </q-card-section>
     </q-card>
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 import ChartSection from 'src/components/dashboard/ChartSection.vue';
 
 const chartData = {
@@ -74,10 +84,13 @@ export default defineComponent({
     ChartSection
   },
   setup() {
-    
+    const progress = ref(0.3)
+
     return {
       options,
-      chartData
+      chartData,
+      progress,
+      progressLabel: computed(() => (progress.value * 100).toFixed(2) + '%'),
     }
   },
 })
