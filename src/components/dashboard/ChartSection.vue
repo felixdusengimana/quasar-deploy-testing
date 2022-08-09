@@ -1,6 +1,6 @@
 <template>
-  <div class="full-width">
-    <canvas :id="chartId"></canvas>
+  <div>
+    <canvas v-bind:height="height" :id="chartId"></canvas>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default defineComponent({
     type: String,
     data: Object,
     options: Object
+  },
+  data: function() {
+    return {
+      height: 70
+    }
   },
   watch: {
     data (newVal) {

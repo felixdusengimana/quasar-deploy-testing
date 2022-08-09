@@ -1,14 +1,25 @@
 <template>
   <div class="tw-h-2/3">
-    <div class="tw-h-96">
-      <ChartSection
-        ref="chart"
-        chartId="comparisons-chart"
-        type="bar"
-        :data="chartData"
-        :options="options"
+    <div class="tw-border-2 tw-border-gray-300 tw-py-5">
+      <q-linear-progress
+        :value="progress"
+        rounded
+        color="purple"
+        track-color="orange"
+        class="q-mt-sm"
       />
     </div>
+    <q-card flat class="tw-mx-auto">
+      <q-card-section>
+        <ChartSection
+          ref="chart"
+          chartId="comparisons-chart"
+          type="bar"
+          :data="chartData"
+          :options="options"
+        />
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
