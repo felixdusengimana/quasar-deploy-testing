@@ -15,7 +15,7 @@ const routes = [
     name: 'student-dashboard',
     component: () => import('layouts/DashboardLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('pages/dashboard/DashboardPage.vue') }
     ]
   },
 
