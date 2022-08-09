@@ -11,8 +11,9 @@ const routes = [
     component: () => import('pages/auth/LoginScreen.vue'),
   },
   {
-    path: '/user',
-    component: () => import('layouts/MainLayout.vue'),
+    path: '/dashboard',
+    name: 'student-dashboard',
+    component: () => import('layouts/DashboardLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') }
     ]

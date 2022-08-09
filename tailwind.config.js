@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,vue}"],
   theme: {
     extend: {
+      colors: {
+        'primary-bg-color': '#1e136b'
+      },
       backgroundImage: {
         'auth-bg-image': "url('src/assets/img/auth-bg.png')"
       }
