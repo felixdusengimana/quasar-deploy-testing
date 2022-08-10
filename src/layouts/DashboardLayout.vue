@@ -56,7 +56,7 @@
           exact
           clickable
           active-class="bg-info"
-          to="/classes"
+          :to="{ name: 'videos' }"
           class="tw-pl-10 tw-mt-3"
         >
           <q-item-section
