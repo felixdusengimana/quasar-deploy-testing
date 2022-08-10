@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary-bg-color': '#1e136b'
+        'primary-bg-color': '#1e136b',
+        'brand-pink-color': '#f31fc5'
       },
       backgroundImage: {
         'auth-bg-image': "url('src/assets/img/auth-bg.png')"

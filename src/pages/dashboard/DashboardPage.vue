@@ -116,7 +116,7 @@ export default defineComponent({
       options,
       chartData,
       progress,
-      progressLabel: computed(() => (progress.value * 100).toFixed(2) + '%'),
+      progressLabel: computed(() => (progress.value * 100) + '%'),
     }
   },
 })
