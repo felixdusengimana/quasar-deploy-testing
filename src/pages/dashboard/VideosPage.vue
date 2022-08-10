@@ -30,9 +30,10 @@
     </div>
     <div class="tw-flex">
       <div class="tw-w-2/3 tw-mt-12 tw-ml-6">
+        {{ active.id }}
         <q-media-player
           type="video"
-          :sources="sources"
+          :source="active.src"
         />
       </div>
       <div class="tw-mt-14 tw-w-1/3 tw-mx-10">
@@ -61,7 +62,7 @@
               <q-card>
                 <q-card-section>
                   <q-list>
-                    <q-item clickable v-ripple class="tw-border-l-4 tw-bg-gray-50 tw-border-brand-pink-color">
+                    <q-item v-for="video in sources" :key="video.id" clickable v-ripple class="tw-border-l-4 tw-mt-1 tw-bg-gray-50 tw-border-brand-pink-color" @click="select(video.id)">
                       <q-item-section avatar>
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <circle cx="9.5" cy="9.5" r="9.5" fill="#F31FC5"/>
@@ -73,7 +74,7 @@
                         </svg> -->
                       </q-item-section>
                       <q-item-section>
-                        Focus of UI/UX design
+                        {{ video.title }}
                         <div class="tw-text-gray-600 tw-text-xs">
                           19 min
                         </div>
@@ -93,22 +94,45 @@
 <script>
 import { computed, defineComponent, ref } from 'vue';
 
+const sources = [
+  {
+    id: 1,
+    title: 'Focus of UI/UX design 1',
+    src: 'http://www.peach.themazzone.com/durian/movies/sintel-2048-surround.mp4',
+  },
+  {
+    id: 2,
+    title: 'Focus of UI/UX design 2',
+    src: 'http://www.peach.themazzone.com/durian/movies/sintel-2048-surround.mp4',
+  },
+  {
+    id: 3,
+    title: 'Focus of UI/UX design 3',
+    src: 'http://www.peach.themazzone.com/durian/movies/sintel-2048-surround.mp4',
+  }
+]
+
 export default defineComponent({
   name: "VideosPage",
   setup() {
-    const sources = [
-      {
-        src: 'http://www.peach.themazzone.com/durian/movies/sintel-2048-surround.mp4',
-      }
-    ]
-    const progress = ref(0.3)
+    const progress = ref(0.33)
     const expanded = ref(false)
+    const active = ref(sources[0])
+    let selected = ref(false)
+
+    const select = (id) => {
+      active.value = sources.find(x => x.id == id)
+      console.log(active);
+    }
 
     return {
       sources,
       progress,
       progressLabel: computed(() => (progress.value * 100) + '%'),
       expanded,
+      select,
+      selected,
+      active,
 
       thumbStyle: {
         right: '2px',

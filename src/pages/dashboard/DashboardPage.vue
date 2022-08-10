@@ -110,7 +110,7 @@ export default defineComponent({
     ChartSection
   },
   setup() {
-    const progress = ref(0.3)
+    const progress = ref(0.33)
 
     return {
       options,
