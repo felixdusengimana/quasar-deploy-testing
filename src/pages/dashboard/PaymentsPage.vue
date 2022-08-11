@@ -152,10 +152,42 @@
       </q-table>
     </div>
   </div>
+  <q-dialog v-model="addCardModal" persistent>
+    <q-card class="tw-w-full">
+      <q-card-section class="row items-center">
+        <q-space />
+        <q-btn icon="close" flat color="bg-grey-3" round v-close-popup />
+      </q-card-section>
+      <q-card-section>
+        <div class="tw-pl-12 tw-text-base">
+          Enter your card details below
+        </div>
+        <div class="tw-mx-12 tw-mt-6">
+          <q-input dense v-model="cardNumer" color="accent" type="text" label="CARD NUMBER" placeholder="0000 0000 0000 0000" />
+          <div class="tw-flex tw-w-full tw-mt-4">
+            <q-input dense v-model="validTill" type="text" class="tw-w-full tw-mr-3" color="accent" label="VALID TILL" placeholder="MM/YY" />
+            <q-input dense v-model="cvv" type="text" class="tw-w-24" color="accent" label="CVV" placeholder="123" />
+          </div>
+          <div class="-tw-ml-3 tw-mt-5">
+            <q-checkbox v-model="checked" color="pink-4" keep-color label="Remember this card" />
+          </div>
+          <div class="-tw-ml-1 tw-mt-5">
+            <q-select v-model="payment" color="accent" :options="options" label="Choose a payment plan" outlined class="tw-w-64" />
+          </div>
+        </div>
+      </q-card-section>
+      <q-card-actions align="center" class="tw-mt-6">
+        <q-btn class="tw-w-56 tw-rounded-xl tw-h-14" label="Pay NGN130" unelevated color="accent" />
+      </q-card-actions>
+      <div class="tw-text-brand-pink-color tw-font-medium tw-text-center tw-pt-3 tw-pb-10 tw-text-base">
+        Secured by Flutterwave
+      </div>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 const columns = [
   {
@@ -207,10 +239,28 @@ const rows = [
 export default defineComponent({
   name: "PaymentsPage",
   setup() {
+    const addCardModal = ref(true)
+
+    // tempo
+    const checked = ref(false)
+    const options = ref(['daily', 'weekly', 'monthly', 'per term', 'one time'])
+    const cardNumer = ref('')
+    const validTill = ref('')
+    const cvv = ref('')
+    const payment = ref('')
     
     return {
       columns,
-      rows
+      rows,
+      addCardModal,
+
+      // tempo
+      checked,
+      options,
+      cardNumer,
+      validTill,
+      cvv,
+      payment
     }
   },
 })
