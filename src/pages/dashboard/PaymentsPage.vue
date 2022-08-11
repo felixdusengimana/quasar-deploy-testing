@@ -5,7 +5,7 @@
         <div class="tw-mt-9 tw-flex">
           <q-btn color="accent" label="Make payment" unelevated class="tw-rounded-xl tw-mx-2 tw-w-36 tw-h-14" no-caps @click="onClick" />
           <div class="tw-w-36 tw-h-14 tw-rounded-xl tw-mx-2 tw-border-2 tw-border-primary-bg-color">
-            <q-btn color="accent" label="Make payment" flat class="tw-rounded-xl tw-w-full tw-h-full" no-caps @click="onClick" />
+            <q-btn color="accent" label="Add card" flat class="tw-rounded-xl tw-w-full tw-h-full" no-caps @click="addCardModal = true" />
           </div>
         </div>
         <div class="tw-bg-gradient-to-tr tw-from-primary-dark-color tw-to-primary-light-color tw-w-80 tw-h-32 tw-rounded-lg tw-ml-4">
@@ -184,6 +184,48 @@
       </div>
     </q-card>
   </q-dialog>
+  <q-dialog v-model="paymentModal" persistent>
+    <q-card class="tw-w-full">
+      <q-card-section class="row items-center">
+        <q-space />
+        <q-btn icon="close" flat color="bg-grey-3" round v-close-popup />
+      </q-card-section>
+      <q-card-section>
+        <div class="tw-mx-24">
+          <div class="tw-flex tw-justify-between">
+            <div class="tw-text-base">
+              Pay with this card
+            </div>
+            <q-btn flat dense icon="eva-more-horizontal-outline">
+              <q-tooltip>
+                delete this card
+              </q-tooltip>
+            </q-btn>
+          </div>
+          <div class="tw-mt-6">
+            <q-input dense v-model="savedCardNumber" class="tw-text-xl" disable color="accent" type="text" />
+            <div class="tw-mt-6">
+              <div class="tw-font-medium tw-text-base">
+                Card Name
+              </div>
+              <div class="tw-text-sm tw-text-gray-600 tw-font-medium">
+                Dahir M. Dahir
+              </div>
+            </div>
+            <div class="-tw-ml-1 tw-mt-5">
+              <q-select v-model="payment" color="accent" :options="options" label="Choose a payment plan" outlined class="tw-w-64" />
+            </div>
+          </div>
+        </div>
+      </q-card-section>
+      <q-card-actions align="center" class="tw-mt-6">
+        <q-btn class="tw-w-56 tw-rounded-xl tw-h-14" label="Pay NGN130" unelevated color="accent" />
+      </q-card-actions>
+      <div class="tw-text-brand-pink-color tw-font-medium tw-text-center tw-pt-8 tw-pb-10 tw-text-base">
+        Secured by Flutterwave
+      </div>
+    </q-card>
+  </q-dialog>
 </template>
 
 <script>
@@ -239,7 +281,8 @@ const rows = [
 export default defineComponent({
   name: "PaymentsPage",
   setup() {
-    const addCardModal = ref(true)
+    const addCardModal = ref(false)
+    const paymentModal = ref(true)
 
     // tempo
     const checked = ref(false)
@@ -248,11 +291,13 @@ export default defineComponent({
     const validTill = ref('')
     const cvv = ref('')
     const payment = ref('')
+    const savedCardNumber = ref('**** **** **** 1234')
     
     return {
       columns,
       rows,
       addCardModal,
+      paymentModal,
 
       // tempo
       checked,
@@ -260,7 +305,8 @@ export default defineComponent({
       cardNumer,
       validTill,
       cvv,
-      payment
+      payment,
+      savedCardNumber
     }
   },
 })
