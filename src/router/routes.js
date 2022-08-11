@@ -23,6 +23,11 @@ const routes = [
         path: '/videos',
         name: 'videos',
         component: () => import('pages/dashboard/VideosPage.vue'),
+      },
+      {
+        path: '/payment',
+        name: 'payment',
+        component: () => import('pages/dashboard/PaymentsPage.vue'),
       }
     ]
   },
