@@ -3,7 +3,7 @@
     <div class="tw-flex tw-justify-between tw-mt-10 tw-mx-16">
       <div class="tw-flex">
         <div class="tw-mt-9 tw-flex">
-          <q-btn color="accent" label="Make payment" unelevated class="tw-rounded-xl tw-mx-2 tw-w-36 tw-h-14" no-caps @click="onClick" />
+          <q-btn color="accent" label="Make payment" unelevated class="tw-rounded-xl tw-mx-2 tw-w-36 tw-h-14" no-caps @click="paymentModal = true" />
           <div class="tw-w-36 tw-h-14 tw-rounded-xl tw-mx-2 tw-border-2 tw-border-primary-bg-color">
             <q-btn color="accent" label="Add card" flat class="tw-rounded-xl tw-w-full tw-h-full" no-caps @click="addCardModal = true" />
           </div>
@@ -282,7 +282,7 @@ export default defineComponent({
   name: "PaymentsPage",
   setup() {
     const addCardModal = ref(false)
-    const paymentModal = ref(true)
+    const paymentModal = ref(false)
 
     // tempo
     const checked = ref(false)
