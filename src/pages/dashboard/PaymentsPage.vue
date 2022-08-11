@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="tw-flex tw-justify-between tw-mt-10 tw-mx-24">
+    <div class="tw-flex tw-justify-between tw-mt-10 tw-mx-16">
       <div class="tw-flex">
-        <div class="tw-mt-7 tw-flex">
+        <div class="tw-mt-9 tw-flex">
           <q-btn color="accent" label="Make payment" unelevated class="tw-rounded-xl tw-mx-2 tw-w-36 tw-h-14" no-caps @click="onClick" />
           <div class="tw-w-36 tw-h-14 tw-rounded-xl tw-mx-2 tw-border-2 tw-border-primary-bg-color">
             <q-btn color="accent" label="Make payment" flat class="tw-rounded-xl tw-w-full tw-h-full" no-caps @click="onClick" />
@@ -74,16 +74,144 @@
         </div>
       </div>
     </div>
+    <div class="tw-mx-16 tw-mt-10">
+      <div class="tw-text-lg">
+        Payments
+      </div>
+      <q-table
+        :rows="rows"
+        bordered
+        :columns="columns"
+        no-route-fullscreen-exit
+        :visibleColumns="visibleColumns"
+        row-key="id"
+        flat
+        binary-state-sort
+        class="my-sticky-header-table no-border tw-mt-5"
+        title-class="text-blue-10"
+        :filter="filter"
+        :filter-method="filterData"
+        :loading="tableIsLoading"
+        :rows-per-page-options="[10, 25, 50, 0]"
+      >
+        <template v-slot:loading>
+          <q-spinner-tail color="primary" size="3em" class="tw-mx-auto" />
+        </template>
+        <template v-slot:body="props">
+          <q-tr :props="props">
+            <q-td key="status" :props="props">
+              <div :class="props.row.status == 'success' ? 'tw-bg-green-50 tw-text-green-500' : 'tw-bg-red-50 tw-text-red-500'" class="tw-text-center tw-py-1 tw-rounded-lg">
+                {{ props.row.status }}
+              </div>
+            </q-td>
+            <q-td key="payment_plan" :props="props">
+              {{ props.row.payment_plan }}
+            </q-td>
+            <q-td key="balance" :props="props">
+              {{ props.row.balance }}
+            </q-td>
+            <q-td key="created" :props="props">
+              {{ props.row.created }}
+            </q-td>
+            <q-td key="view" :props="props">
+              <q-btn-dropdown
+                size="sm"
+                flat
+                dropdown-icon="eva-more-vertical-outline"
+                label=""
+              >
+                <q-list class="tw-w-48">
+                  <q-item
+                    :to="{
+                      name: '',
+                      params: { id: props.row.id },
+                    }"
+                    class="tw-text-xs tw-h-6 hover:tw-bg-primary-bg-color hover:tw-text-white"
+                    clickable
+                    v-close-popup
+                  >
+                    <q-item-section>
+                      <q-item-label>Profile</q-item-label>
+                    </q-item-section>
+                  </q-item>
+
+                  <q-item
+                    class="tw-text-xs tw-h-6 hover:tw-bg-primary-bg-color hover:tw-text-white"
+                    clickable
+                    v-close-popup
+                  >
+                    <q-item-section>
+                      <q-item-label>contact</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-btn-dropdown>
+            </q-td>
+          </q-tr>
+        </template>
+      </q-table>
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 
+const columns = [
+  {
+    name: 'status',
+    required: true,
+    label: 'Status',
+    align: 'center',
+  },
+  { name: 'payment_plan', label: 'Payment plan', align: 'center' },
+  { name: 'balance', label: 'Balance', align: 'center' },
+  { name: 'created', label: 'Created', align: 'center' },
+  { name: 'view', label: 'Actions', align: 'center' },
+];
+
+const rows = [
+  {
+    status: 'success',
+    payment_plan: 'monthly',
+    balance: 'NGN 121,000',
+    created: 'July-3-2022'
+  },
+  {
+    status: 'success',
+    payment_plan: 'monthly',
+    balance: 'NGN 121,000',
+    created: 'July-3-2022'
+  },
+  {
+    status: 'failed',
+    payment_plan: 'monthly',
+    balance: 'NGN 121,000',
+    created: 'July-3-2022'
+  },
+  {
+    status: 'success',
+    payment_plan: 'monthly',
+    balance: 'NGN 121,000',
+    created: 'July-3-2022'
+  },
+  {
+    status: 'failed',
+    payment_plan: 'monthly',
+    balance: 'NGN 121,000',
+    created: 'July-3-2022'
+  },
+]
+
+
 export default defineComponent({
   name: "PaymentsPage",
   setup() {
     
+    return {
+      columns,
+      rows
+    }
   },
 })
 </script>
