@@ -27,7 +27,7 @@ import RegisterSuccess from 'src/components/molecules/RegisterSuccess.vue';
 },
     data() {
         return {
-          step: 7
+          step: 1
         }
     },
     methods: {
