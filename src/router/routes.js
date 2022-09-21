@@ -1,3 +1,6 @@
+// screens
+import LoginScreen from "pages/auth/LoginScreen.vue"
+import RegisterScreen from 'pages/auth/RegisterScreen.vue'
 
 const routes = [
   {
@@ -6,9 +9,14 @@ const routes = [
     component: () => import('pages/auth/CreatePassword.vue'),
   },
   {
+    path: '/register',
+    name: 'register',
+    component: RegisterScreen,
+  },
+  {
     path: '/login',
     name: 'login',
-    component: () => import('pages/auth/LoginScreen.vue'),
+    component: () => LoginScreen,
   },
   {
     path: '/dashboard',
