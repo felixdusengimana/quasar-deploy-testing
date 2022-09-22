@@ -8,7 +8,7 @@
       <RegisterSuccess v-else/>
     </div>
   </template>
-  
+
   <script>
   import Navbar from 'components/molecules/Navbar.vue';
 import RegisterForm from '../../components/molecules/RegisterForm.vue';
@@ -27,7 +27,7 @@ import RegisterSuccess from 'src/components/molecules/RegisterSuccess.vue';
 },
     data() {
         return {
-          step: 1
+          step: 4
         }
     },
     methods: {
@@ -39,8 +39,7 @@ import RegisterSuccess from 'src/components/molecules/RegisterSuccess.vue';
       }
     },
     setup() {
-     
+
     }
   }
   </script>
-  

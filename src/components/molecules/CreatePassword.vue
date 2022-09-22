@@ -24,15 +24,16 @@
 
     <div class="tw-my-8">
         <input
-          type="password2"
+          type="password"
           v-model="password2"
           name="password2"
           placeholder="Enter Password again"
           class="tw-w-full tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-text-sm tw-outline-none"
+          :class="{'tw-border-red-500': password2 && password !== password2}"
     />
     <p v-if="!doesPasswordsMatch & password2!=''" class="tw-text-red-500 tw-font-bold tw-text-[14px]">Password does not match</p>
     </div>
-     
+
         <ul>
             <li v-for="(rule, index) in passwordRules" :key="index" class="tw-flex">
                     <span v-if="rule.valid" class="tw-bg-green-500 tw-flex tw-items-center tw-justify-center tw-mr-2 tw-rounded-full tw-w-4 tw-h-4">
@@ -41,22 +42,22 @@
                     </svg>
                     </span>
                     <span v-else class="tw-w-3 tw-h-3 tw-rounded-full tw-bg-[#ccc] tw-inline-block tw-mr-2"></span>
-                    <span>{{rule.text}}</span>                
+                    <span>{{rule.text}}</span>
             </li>
         </ul>
-        
+
       <button type="submit" class="lg:tw-w-[640px] tw-mt-32 tw-bg-[#000060] tw-h-[67px] tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
           I've confirmed my email
       </button>
       <div class="tw-mt-5 tw-w-full">
           <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-w-fit tw-mx-auto">
           <img src="../../assets/icons/lock.svg" alt="" class="tw-mr-2" />
-          <span>Your Info is safely secured</span></p>  
+          <span>Your Info is safely secured</span></p>
       </div>
   </form>
     </div>
   </template>
-  
+
   <script>
     export default{
       name: 'create-password',
@@ -83,7 +84,7 @@
         password2: function (newValue){
             this.handleCheckEquality(this.password, newValue);
         }
-      },  
+      },
       methods: {
         onSubmit(e) {
           e.preventDefault();
