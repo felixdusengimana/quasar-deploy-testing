@@ -3,8 +3,8 @@
         <div class="lg:tw-w-[472px] tw-border tw-z-10 tw-border-black tw-mb-6 tw-text-sm tw-outline-none
     tw-flex tw-items-center">
       <input type="text" :onclick="opeClose" v-model="searchText" name="search_input" @change="handleSearch" :placeholder="placeholder" class="tw-w-11/12 tw-py-6 tw-p-4 tw-outline-none">
-      <img v-if="open" :onclick="opeClose" src="../../assets/icons/caret-up.svg" alt="" class="tw-flex-grow"/>
-      <img v-else :onclick="opeClose" src="../../assets/icons/caret-down.svg" alt="" class="tw-flex-grow"/>
+      <!-- <img v-if="open" :onclick="opeClose" src="../../assets/icons/caret-up.svg" alt="" class="tw-flex-grow"/> -->
+      <img :onclick="opeClose" src="../../assets/icons/caret-down.svg" alt="" :class=" open?'tw-rotate-180':'tw-rotate-0'"/>
     </div>
     <div v-if="open" class="tw-max-h-[276px] tw-z-20 tw-overflow-auto tw-h-fit tw-w-full tw-absolute tw-top-[70px] tw-bg-white tw-border tw-border-[#9F9F9F] tw-shadow-form">
         <div v-if="searchResult.length>0">
@@ -49,11 +49,11 @@ export default {
             required: true
         }
     },
-    
+
     methods: {
         search(){
             this.searchResult = this.options.filter(option => option.toLowerCase().includes(this.searchText.toLowerCase()))
-            
+
         },
         select(option){
             this.selected = option

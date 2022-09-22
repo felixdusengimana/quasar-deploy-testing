@@ -11,7 +11,7 @@
           <p class="tw-text-[#606060] tw-mt-2 tw-text-xl">Your details have been successfully submitted.</p>
           <p class="tw-text-[#606060] tw-mb-5 tw-text-xl">you can now sign in with your email address and password to continue.</p>
           </div>
-        
+
         <!-- gif -->
         <div class="tw-w-10/12 tw-mx-auto">
           <img src="../../assets/img/successful.gif" alt="" class="tw-w-full tw-h-full"/>
@@ -30,11 +30,10 @@
       </div>
     </div>
   </template>
-  
+
   <script>
   export default {
     setup() {
     }
   }
   </script>
-  
