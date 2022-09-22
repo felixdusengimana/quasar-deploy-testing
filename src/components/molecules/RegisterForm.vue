@@ -9,7 +9,7 @@
           <h1 class="tw-text-black tw-text-2xl tw-font-bold">Personal Information</h1>
           <p class="tw-text-[#000000] tw-mt-2 tw-mb-5 tw-text-xl">Fill in your details</p>
           </div>
-        
+
     <div class="tw-flex tw-flex-row tw-mt-20 tw-justify-between tw-w-full tw-gap-8">
         <input
           type="text"
@@ -18,6 +18,7 @@
           placeholder="First name"
           class="lg:tw-w-[472px] tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"
         />
+        THis isis: {{firstName}}
         <input
           type="text"
           v-model="lastName"
@@ -26,7 +27,7 @@
           class="lg:tw-w-[472px] tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"
         />
     </div>
-         
+
     <div class="tw-flex tw-flex-row tw-justify-between tw-w-full tw-gap-8">
         <input
           type="phone"
@@ -66,7 +67,7 @@
             <p class="tw-text-[#000000] tw-text-base tw-font-bold">Click here to upload your SSCE certificate</p>
          <input type="file" hidden name="file" accept=".pdf" id="uploadFile">
         </label>
-        
+
     </div>
           <button type="submit" class="tw-max-w-[640px] tw-bg-[#000060] tw-h-[67px] tw-w-full tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
             Continue
@@ -89,30 +90,46 @@
     props: {
         nextStep: { type: Function, required: false }
     },
+    data(){
+      return{
+        user: {
+          firstName: '',
+          lastName: '',
+          phone: '',
+          gender: '',
+          country: '',
+          state: '',
+          educationLevel: '',
+          schoolChoice: '',
+          course: '',
+          dob: '',
+          file: ''
+        }
+      }
+    },
+
     methods: {
         getSelectValue(val) {
             console.log(val)
-        }
+        },
+        setElementValue(e) {
+            this.user[e.target.name] = e.target.value
+          console.log(e.target.value)
+        },
+        onSubmit(e) {
+            e.preventDefault()
+            console.log(this.user)
+        },
     },
     mounted() {
         // console.log(countries)
     },
     setup(props) {
-        const email = ref("");
-        const password = ref("");
-        const onSubmit = (evt) => {
-            evt.preventDefault();
-            console.log("submit", email.value, password.value);
-            props.nextStep();
-        };
         const onReset = (evt) => {
             evt.preventDefault();
             console.log("reset");
         };
         return {
-            email,
-            password,
-            onSubmit,
             onReset
         };
     },
