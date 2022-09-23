@@ -1,6 +1,7 @@
 // screens
 import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
+import AssingmentsPage from 'pages/dashboard/AssignmentsPage.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
         path: '/payment',
         name: 'payment',
         component: () => import('pages/dashboard/PaymentsPage.vue'),
+      },
+      {
+        path: '/assignments',
+        name: 'assignments',
+        component: () => AssingmentsPage,
       }
     ]
   },
