@@ -18,7 +18,7 @@
         placeholder="Enter your email"
         class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"
       />
-       
+
         <input
         type="password"
         v-model="password"
@@ -27,7 +27,7 @@
         class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"/>
       <div>
         <label for="remember" class="tw-flex tw-flex-row tw-gap-1 tw-text-sm tw-mb-2">
-          <input class="tw-h-[14.22px]" type="checkbox" name="remember" id="remember"/> 
+          <input class="tw-h-[14.22px]" type="checkbox" name="remember" id="remember"/>
           <p>Rember me</p>
         </label>
         <button type="submit" class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-bg-[#000060] tw-h-[67px] tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
@@ -41,7 +41,7 @@
       </div>
     </q-form>
       <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-items-center tw-my-5 tw-w-fit tw-mx-auto">
-        <img src="../../assets/icons/lock.svg" alt="" class="tw-mr-2" />
+        <img src="~assets/icons/lock.svg" alt="" class="tw-mr-2" />
         <span>Your Info is safely secured</span>
       </p>
     </div>

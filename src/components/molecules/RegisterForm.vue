@@ -63,7 +63,7 @@
 
     <div class="lg:tw-w-[474px] tw-h-[148px] tw-border tw-border-[#000000] tw-border-dashed tw-rounded-[10px] tw-mx-auto tw-mb-16">
         <label for="uploadFile" class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-full">
-            <img src="../../assets/icons/file-upload.svg" alt=""/>
+            <img src="~assets/icons/file-upload.svg" alt=""/>
             <p class="tw-text-[#000000] tw-text-base tw-font-bold">Click here to upload your SSCE certificate</p>
          <input type="file" hidden name="file" accept=".pdf" id="uploadFile">
         </label>
@@ -75,7 +75,7 @@
       </form>
       <div class="tw-mt-5 tw-mb-10">
         <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-items-center">
-          <img src="../../assets/icons/lock.svg" alt="" class="tw-mr-2" />
+          <img src="~assets/icons/lock.svg" alt="" class="tw-mr-2" />
           <span>Your Info is safely secured</span></p>
       </div>
       </div>
@@ -84,7 +84,7 @@
 <script>
    import { ref } from 'vue'
     import SelectInput from './SelectInput.vue'
-    // import countries from '../../assets/country.json'
+    // import countries from '~assets/country.json'
   export default {
     name: "register-form",
     props: {

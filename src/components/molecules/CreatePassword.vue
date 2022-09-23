@@ -18,8 +18,8 @@
           placeholder="Enter your Enter Password"
           class="tw-w-11/12 tw-h-full tw-py-6 tw-px-4 tw-outline-none"
     />
-    <img :onclick="toggleShowPassword" v-if="!isPasswordShown" src="../../assets/icons/eye-off.svg" alt="" class="tw-ml-3">
-    <img :onclick="toggleShowPassword" v-else src="../../assets/icons/eye-open.svg" alt="" class="tw-ml-3 tw-max-w-[25px]">
+    <img :onclick="toggleShowPassword" v-if="!isPasswordShown" src="~assets/icons/eye-off.svg" alt="" class="tw-ml-3">
+    <img :onclick="toggleShowPassword" v-else src="~assets/icons/eye-open.svg" alt="" class="tw-ml-3 tw-max-w-[25px]">
     </div>
 
     <div class="tw-my-8">
@@ -51,7 +51,7 @@
       </button>
       <div class="tw-mt-5 tw-w-full">
           <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-w-fit tw-mx-auto">
-          <img src="../../assets/icons/lock.svg" alt="" class="tw-mr-2" />
+          <img src="~assets/icons/lock.svg" alt="" class="tw-mr-2" />
           <span>Your Info is safely secured</span></p>
       </div>
   </form>

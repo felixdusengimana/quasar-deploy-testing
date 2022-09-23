@@ -1,6 +1,7 @@
 <template>
     <q-header class="tw-bg-white tw-h-20" bordered>
       <q-toolbar>
+        <img v-if="withLogo" src="~assets/logo.svg"/>
         <q-space />
         <div class="tw-mt-3">
           <q-img
@@ -25,24 +26,13 @@
 export default {
   name: "navbar-component",
   props: {
-    user: {
-      type: Object,
-      default: () => {}
-    },
-    setting: {
-      type: Object,
-      default: () => {}
-    },
+    withLogo: {
+      type: String,
+      required: true
+    }
   },
-  data() {
-    return {
-      drawer: null,
-    };
-  },
-  methods: {
-    toggleDrawer() {
-      this.drawer = !this.drawer;
-    },
-  },
+  setup(props){
+     props.withLogo;
+  }
 };
 </script>

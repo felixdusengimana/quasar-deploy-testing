@@ -14,7 +14,7 @@
 
         <!-- gif -->
         <div class="tw-w-10/12 tw-mx-auto">
-          <img src="../../assets/img/successful.gif" alt="" class="tw-w-full tw-h-full"/>
+          <img src="~assets/img/successful.gif" alt="" class="tw-w-full tw-h-full"/>
         </div>
         <div>
           <button type="submit" class="tw tw-bg-[#000060] tw-h-[67px] tw-w-full tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
@@ -24,7 +24,7 @@
       </q-form>
       <div>
         <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-items-center">
-          <img src="../../assets/icons/lock.svg" alt="" class="tw-mr-2" />
+          <img src="~assets/icons/lock.svg" alt="" class="tw-mr-2" />
           <span>Your Info is safely secured</span></p>
       </div>
       </div>

@@ -11,9 +11,9 @@
 
   <script>
   import Navbar from 'components/molecules/Navbar.vue';
-import RegisterForm from '../../components/molecules/RegisterForm.vue';
+import RegisterForm from 'components/molecules/RegisterForm.vue';
 import EnterEmail from 'src/components/molecules/EnterEmail.vue';
-import ConfirmEmail from '../../components/molecules/ConfirmEmail.vue';
+import ConfirmEmail from 'components/molecules/ConfirmEmail.vue';
 import CreatePassword from 'src/components/molecules/CreatePassword.vue';
 import RegisterSuccess from 'src/components/molecules/RegisterSuccess.vue';
   export default {

@@ -21,10 +21,12 @@
                 <q-item>
                   <q-item-section>
                     <q-item-label class="tw-text-xl tw-font-bold tw-text-black">{{month_assignment.name}}</q-item-label>
-                    <q-item-label caption class="tw-flex tw-items-center tw-justify-start tw-gap-1 tw-text-[#9F9F9F] tw-font-normal tw-text-sm">
-                      <img src="../../assets/icons/info-gray.svg" alt="">
+                    <q-item-label caption
+                    class="tw-flex tw-items-center tw-justify-start tw-gap-1 tw-font-normal tw-text-sm"
+                    :class="isInThePast(month_assignment.dueDate)?'tw-text-[#9F9F9F]':'tw-text-red-500'">
+                      <img src="~assets/icons/info-gray.svg" alt="">
                       <p>Due date: {{new Date(month_assignment.dueDate).toLocaleDateString("en-US", {
-                        day: 'numeric', year: 'numeric', month: 'long'
+                        day: 'numeric', year: 'numeric', month: 'short'
                       })}}</p>
                     </q-item-label>
                   </q-item-section>
@@ -36,10 +38,14 @@
 
                 <div class="tw-w-full">
                   <p class="tw-float-right tw-font-bold tw-text-base">100%</p>
-                  <q-linear-progress rounded size="8px" :value="10" color="secondary" class="tw-bg-[#2CCA58]" />
+                  <q-linear-progress rounded size="8px" :value="1" color="secondary" class="tw-bg-[#2CCA58]" />
                 </div>
 
-                <q-btn unelevated rounded class="tw-bg-[#2CCA58] tw-text-white tw-text-sm tw-font-normal" label="View feedback" />
+                <router-link
+                  :to="'/assignments/'+month_assignment.id"
+                  class="tw-text-sm tw-font-normal tw-py-3 tw-rounded-full tw-text-center"
+                :class="isInThePast(month_assignment.dueDate)?'tw-bg-[#2CCA58] tw-text-white':'tw-bg-white tw-text-[#00009F] tw-border tw-border-[#00009F]'"
+                 >{{isInThePast(month_assignment.dueDate)?'View feedback' : 'Continue'}}</router-link>
             </q-card>
             </q-list>
         </q-expansion-item>
@@ -69,7 +75,7 @@
                     id: 1,
                     name: 'Introduction to product design',
                     description: 'This is the first assignment',
-                    dueDate: '2021-01-01',
+                    dueDate: '2022-12-12',
                     completed: false
                   },
                   {
@@ -86,10 +92,24 @@
                     dueDate: '2021-01-03',
                     completed: false
                   },
+                  {
+                    id: 4,
+                    name: 'Assignment 3',
+                    description: 'This is the third assignment',
+                    dueDate: '2021-01-03',
+                    completed: false
+                  },
+                  {
+                    id: 5,
+                    name: 'Assignment 3',
+                    description: 'This is the third assignment',
+                    dueDate: '2021-01-03',
+                    completed: false
+                  }
                 ]
               },
               {
-                id: 1,
+                id: 2,
                 name: 'January',
                 assingments: [
                   {
@@ -186,5 +206,13 @@
         ],
       }
     },
+    methods:{
+      isInThePast(date) {
+        if(Date.parse(date)-Date.parse(new Date())<0){
+          return true;
+        }
+        return false;
+      }
+    }
   };
 </script>

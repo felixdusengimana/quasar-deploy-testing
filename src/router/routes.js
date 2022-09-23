@@ -2,6 +2,7 @@
 import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
 import AssingmentsPage from 'pages/dashboard/AssignmentsPage.vue'
+import SingleAssignmentPage from 'pages/dashboard/SingleAssignmentPage.vue'
 
 const routes = [
   {
@@ -45,6 +46,20 @@ const routes = [
       }
     ]
   },
+
+  //with no sidebar
+  {
+  path: '/dashboard',
+  name: 'dashboard-without-sidebar',
+  component: () => import('layouts/DashboardWithoutSidebar.vue'),
+  children: [
+    {
+      path: '/assignments/:id',
+      name: 'singleassignments',
+      component: ()=>SingleAssignmentPage,
+    }
+]
+},
 
   // Always leave this as last one,
   // but you can also remove it
