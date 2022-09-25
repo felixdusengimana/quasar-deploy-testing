@@ -33,7 +33,7 @@
         <button type="submit" class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-bg-[#000060] tw-h-[67px] tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
           Continue
         </button>
-        <a href="" class="tw-text-[#1E136B] tw-text-sm tw-block tw-my-5 tw-text-center tw-underline tw-cursor-pointer">Forgot password?</a>
+        <router-link to="/forgot-password" class="tw-text-[#1E136B] tw-text-sm tw-block tw-my-5 tw-text-center tw-underline tw-cursor-pointer">Forgot password?</router-link>
 
         <p class="tw-max-w-[267.56px]  tw-text-[#8F969D] tw-mx-auto tw-text-center tw-text-sm">
           by continuing you  agree to eduvacity <a href="" class="tw-text-[#4A7DFF]">Terms & Condition</a> and <a href="" class="tw-text-[#4A7DFF]">Privacy Policy</a>

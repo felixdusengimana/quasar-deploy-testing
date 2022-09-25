@@ -3,12 +3,15 @@ import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
 import AssingmentsPage from 'pages/dashboard/AssignmentsPage.vue'
 import SingleAssignmentPage from 'pages/dashboard/SingleAssignmentPage.vue'
+import ForgotPassword from 'pages/auth/ForgotPassword.vue'
+import ResetPassword from 'pages/auth/ResetPassword.vue'
+import EnterOTP from 'pages/auth/EnterOTP.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'generate-password',
-    component: () => import('pages/auth/CreatePassword.vue'),
+    name: 'login',
+    component: () => LoginScreen,
   },
   {
     path: '/register',
@@ -16,9 +19,19 @@ const routes = [
     component: RegisterScreen,
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => LoginScreen,
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: ForgotPassword,
+  },
+  {
+    path: '/enter-otp',
+    name: 'enter-otp',
+    component: EnterOTP,
+  },
+  {
+    path: '/generate-password',
+    name: 'generate-password',
+    component: ResetPassword,
   },
   {
     path: '/dashboard',
@@ -68,5 +81,4 @@ const routes = [
     component: () => import('pages/ErrorNotFound.vue')
   }
 ]
-
 export default routes
