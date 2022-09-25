@@ -1,8 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <DashNavbar/>
-    <Sidebar/>
-
+    <DashNavbar :withLogo="true"/>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -13,12 +11,11 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import DashNavbar from 'src/components/dashboard/DashNavbar.vue'
-import Sidebar from 'src/components/dashboard/Sidebar.vue';
 
 export default defineComponent({
-    name: "MainLayout",
+    name: "LayoutWithNoSidebar",
     setup() {
     },
-    components: { DashNavbar, Sidebar }
+    components: { DashNavbar }
 })
 </script>
