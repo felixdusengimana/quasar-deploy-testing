@@ -29,7 +29,78 @@
 
        </div>
     </div>
-    <div></div>
+    <div class="tw-py-8 tw-px-7 tw-grow">
+       <div class="tw-flex justify-between">
+        <div>
+        <p class="tw-text-black tw-font-normal tw-text-base">Your Learning Badges</p>
+        <div class="tw-flex tw-flex-row tw-gap-1 tw-mt-4">
+          <div class="tw-flex tw-flex-col tw-items-center">
+          <img src="~assets/img/bagdes/scholar.png" alt=""/>
+          <button class="tw-border-2 tw-border-[#FB65DA] tw-font-medium tw-text-sm tw-text-[#FB6765] tw-px-2 tw-py-1 tw-rounded-2xl">Master</button>
+        </div>
+        <div class="tw-flex tw-flex-col tw-items-center">
+          <img src="~assets/img/bagdes/master.png" alt=""/>
+          <button class="tw-border-2 tw-border-[#919499] tw-font-medium tw-text-sm tw-text-[#919499] tw-px-2 tw-py-1 tw-rounded-2xl">Master</button>
+        </div>
+        <div class="tw-flex tw-flex-col tw-items-center">
+          <img src="~assets/img/bagdes/master.png" alt=""/>
+          <button class="tw-border-2 tw-border-[#919499] tw-font-medium tw-text-sm tw-text-[#919499] tw-px-2 tw-py-1 tw-rounded-2xl">Master</button>
+        </div>
+        </div>
+       </div>
+
+       <div class="tw-flex tw-flex-col tw-ml-3">
+        <p class="tw-text-center tw-text-black tw-font-normal tw-text-base ">Weekly Goal</p>
+        <div class="tw-relative">
+          <q-circular-progress
+            :value="30"
+            size="180px"
+            :thickness="0.22"
+            color="purple"
+            track-color="grey-3"
+            class="q-ma-md"
+          />
+          <div class="tw-absolute tw-top-[50%] tw-left-[50%] tw-translate-x-[-50%] tw-translate-y-[-50%]">
+            <q-circular-progress
+              show-value
+              class="text-light-blue q-ma-md"
+              :value="60"
+              size="120px"
+              color="light-red"
+            />
+          </div>
+        </div>
+       </div>
+       </div>
+       <div class="tw-flex tw-justify-between">
+        <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-3xl tw-font-bold">30%</p>
+               <div class="tw-w-[15px] tw-h-[15px] tw-bg-[#1E136B] tw-rounded"></div>
+            </div>
+            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR BATCH OVARALL PROGRESS</p>
+        </div>
+
+        <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-3xl tw-font-bold">30%</p>
+               <div class="tw-w-[15px] tw-h-[15px] tw-bg-[#FB6765] tw-rounded"></div>
+            </div>
+            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR BATCH OVARALL PROGRESS</p>
+        </div>
+
+        <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-3xl tw-font-bold">30%</p>
+               <div class="tw-bg-[#FB6765] tw-w-[33px] tw-h-[33px] tw-rounded-full tw-flex tw-justify-center tw-items-center">
+                  <img src="~assets/icons/medal.svg" alt=""/>
+               </div>
+            </div>
+            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR BATCH OVARALL PROGRESS</p>
+        </div>
+
+       </div>
+    </div>
   </div>
 </template>
 
