@@ -1,14 +1,23 @@
 <template>
-    <q-header class="tw-bg-white tw-h-20" bordered>
+    <q-header class="tw-bg-white tw-h-20 tw-flex tw-justify-between tw-items-center"  bordered>
       <q-toolbar>
         <img v-if="withLogo" src="~assets/logo.svg"/>
         <q-space />
-        <div class="tw-mt-3">
-          <q-img
-            class="tw-w-14 tw-h-14 tw-rounded-full"
-            src="~assets/img/profile.png"
-          />
-          <q-btn-dropdown label="John Doe" flat no-caps color="black">
+        <div class="tw-flex tw-items-center tw-gap-10">
+          <img src="~assets/icons/settings.svg"/>
+          <img src="~assets/icons/bell.svg"/>
+          <div class="tw-bg-[#F0F0F0] tw-rounded-full tw-py-3 tw-px-4">
+          <q-btn-dropdown
+            color="black"
+            no-caps
+            flat
+          >
+          <template v-slot:label>
+            <div class="tw-flex tw-gap-2">
+              <img src="~assets/icons/user.svg" alt="">
+              <p class="tw-text-base tw-font-bold">Aminu.abdul</p>
+            </div>
+          </template>
             <q-list>
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section>
@@ -17,6 +26,7 @@
               </q-item>
             </q-list>
           </q-btn-dropdown>
+        </div>
         </div>
       </q-toolbar>
     </q-header>

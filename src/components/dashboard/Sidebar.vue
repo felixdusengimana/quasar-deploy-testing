@@ -124,17 +124,7 @@
             <q-item-label class="tw-text-white tw-text-base -tw-ml-5">Helps</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item
-          v-ripple
-          clickable
-          @click="logout()"
-          class="tw-w-full tw-mt-44 tw-pl-12"
-        >
-          <q-item-section class="tw-text-white" avatar>
-            <q-icon name="logout" />
-          </q-item-section>
-          <q-item-section class="tw-text-xs -tw-ml-5 sm:tw-text-sm tw-text-white">Logout</q-item-section>
-        </q-item>
+
       </q-list>
     </q-drawer>
 </template>
