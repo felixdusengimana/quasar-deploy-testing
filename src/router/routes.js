@@ -2,6 +2,7 @@
 import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
 import AssingmentsPage from 'pages/dashboard/AssignmentsPage.vue'
+import ClassePage from 'pages/dashboard/ClassePage.vue'
 import SingleAssignmentPage from 'pages/dashboard/SingleAssignmentPage.vue'
 import ForgotPassword from 'pages/auth/ForgotPassword.vue'
 import ResetPassword from 'pages/auth/ResetPassword.vue'
@@ -56,6 +57,11 @@ const routes = [
         path: '/assignments',
         name: 'assignments',
         component: () => AssingmentsPage,
+      },
+      {
+        path: '/classes',
+        name: 'classes',
+        component: () => ClassePage,
       }
     ]
   },
