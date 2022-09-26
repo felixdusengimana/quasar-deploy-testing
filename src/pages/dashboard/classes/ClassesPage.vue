@@ -19,7 +19,7 @@
                class="tw-w-full tw-bg-[#F3F5F8] tw-min-h-[66px] tw-border tw-border-[#00000024] tw-pl-5 tw-pr-11 tw-flex tw-items-center tw-justify-between">
                  <p class="tw-text-black tw-font-normal tw-text-xl">{{month_week.name}}</p>
                 <router-link
-                  :to="'/classes/course/'+month_week.id"
+                  :to="'/classes/lesson/'+month_week.id"
                   class="tw-text-xl tw-font-bold tw-py-2 tw-px-10 tw-capitalize tw-rounded-full tw-text-center tw-text-white tw-bg-primary-bg-color"
                   :class="month_week.status == 'locked' && 'tw-bg-[#1E136BA8]'"
                  >{{month_week.status=='done'?'Previous':'Start'}}</router-link>

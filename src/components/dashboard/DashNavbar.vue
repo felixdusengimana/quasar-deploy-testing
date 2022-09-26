@@ -1,5 +1,6 @@
 <template>
-    <q-header class="tw-bg-white tw-h-20 tw-flex tw-justify-between tw-items-center"  bordered>
+    <q-header class="tw-bg-white tw-h-20 tw-flex tw-justify-between tw-items-center"  bordered
+    :class="withLogo&&'md:tw-px-12 sm:tw-px-0'">
       <q-toolbar>
         <img v-if="withLogo" src="~assets/logo.svg"/>
         <q-space />

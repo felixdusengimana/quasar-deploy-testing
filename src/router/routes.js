@@ -5,6 +5,7 @@ import AssingmentsPage from 'src/pages/dashboard/assignments/AssignmentsPage.vue
 import SingleAssignmentPage from 'src/pages/dashboard/assignments/SingleAssignmentPage.vue'
 
 import ClassePage from 'src/pages/dashboard/classes/ClassesPage.vue'
+import ClassLessonPage from 'src/pages/dashboard/classes/ClassLessonPage.vue'
 
 import ForgotPassword from 'pages/auth/ForgotPassword.vue'
 import ResetPassword from 'pages/auth/ResetPassword.vue'
@@ -64,7 +65,7 @@ const routes = [
         path: '/classes',
         name: 'classes',
         component: () => ClassePage,
-      }
+      },
     ]
   },
 
@@ -78,7 +79,12 @@ const routes = [
       path: '/assignments/:id',
       name: 'singleassignments',
       component: ()=>SingleAssignmentPage,
-    }
+    },
+    {
+      path: '/classes/lesson/:id',
+      name: 'class-lesson',
+      component: () => ClassLessonPage,
+    },
 ]
 },
 
