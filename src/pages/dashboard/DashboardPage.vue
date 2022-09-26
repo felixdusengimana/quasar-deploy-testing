@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-mt-5 tw-max-w-[1121.73px] tw-border tw-border-[#D9D9D9] tw-flex tw-mx-auto tw-rounded-xl tw-px-10">
+  <div class="tw-mt-5 tw-max-w-[80vw] tw-border tw-border-[#D9D9D9] tw-flex tw-mx-auto md:tw-flex-row sm:tw-flex-col tw-rounded-xl tw-px-10">
     <div class="tw-py-8 tw-border-r-[2px] tw-pr-10">
       <h1 class="tw-text-black tw-font-semibold tw-text-3xl tw-mb-2">Welcome back Musa!</h1>
       <div class="tw-flex tw-gap-2 tw-items-center tw-mb-3">
@@ -64,10 +64,14 @@
             <q-circular-progress
               show-value
               class="text-light-blue q-ma-md"
-              :value="60"
+              :value="progressValue"
               size="120px"
               color="light-red"
-            />
+              track-color="grey-3"
+            >
+            <p class="tw-text-black">{{ progressValue }}%</p>
+            <small class="tw-text-black tw-text-xs">Your progress</small>
+          </q-circular-progress>
           </div>
         </div>
        </div>
@@ -83,85 +87,85 @@
 
         <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
             <div class="tw-flex tw-items-center tw-gap-2">
-              <p class="tw-text-3xl tw-font-bold">30%</p>
+              <p class="tw-text-3xl tw-font-bold">12%</p>
                <div class="tw-w-[15px] tw-h-[15px] tw-bg-[#FB6765] tw-rounded"></div>
             </div>
-            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR BATCH OVARALL PROGRESS</p>
+            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR OVARALL PROGRESS</p>
         </div>
 
         <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
             <div class="tw-flex tw-items-center tw-gap-2">
-              <p class="tw-text-3xl tw-font-bold">30%</p>
+              <p class="tw-text-3xl tw-font-bold">30</p>
+              <p class="tw-font-bold">Aug</p>
                <div class="tw-bg-[#FB6765] tw-w-[33px] tw-h-[33px] tw-rounded-full tw-flex tw-justify-center tw-items-center">
                   <img src="~assets/icons/medal.svg" alt=""/>
                </div>
             </div>
-            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">YOUR BATCH OVARALL PROGRESS</p>
+            <p class="tw-font-bold tw-text-xs tw-uppercase tw-mt-3">DEADLINE</p>
+            <p>22 Hrs Remaining</p>
         </div>
-
+       </div>
+       <div class="tw-flex tw-items-center gap-2 tw-justify-center tw-pt-5">
+        <img src="~assets/icons/grey-warning.svg"/>
+       <p class="tw-font-bold tw-text-[#333333] tw-text-sm">New Learning Cycle will start 31 AUG</p>
        </div>
     </div>
   </div>
 </template>
 
 <script>
-import { computed, defineComponent, ref } from 'vue';
-import ChartSection from 'src/components/dashboard/ChartSection.vue';
+// import { computed, defineComponent, ref } from 'vue';
+// import ChartSection from 'src/components/dashboard/ChartSection.vue';
 
-const chartData = {
-  labels: ['week1', 'week2', 'week3', 'week4', 'week1', 'week2', 'week3', 'week4', 'week1', 'week2', 'week3', 'week4'],
-  datasets: [
-    {
-      label: 'Offline',
-      backgroundColor: '#1e136b',
-      data: [4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6],
-      borderWidth: 1,
-    },
-    {
-      label: 'Offline',
-      backgroundColor: '#faa5e8',
-      data: [5, 3, 2, 1, 3, 2, 4, 2, 3, 1, 4, 2, 7, 3, 2, 5, 2, 4, 1, 4, 1, 2, 3, 7, 2, 7, 2, 1]
-    },
-  ]
-};
+// const chartData = {
+//   labels: ['week1', 'week2', 'week3', 'week4', 'week1', 'week2', 'week3', 'week4', 'week1', 'week2', 'week3', 'week4'],
+//   datasets: [
+//     {
+//       label: 'Offline',
+//       backgroundColor: '#1e136b',
+//       data: [4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6, 4, 5, 7, 6],
+//       borderWidth: 1,
+//     },
+//     {
+//       label: 'Offline',
+//       backgroundColor: '#faa5e8',
+//       data: [5, 3, 2, 1, 3, 2, 4, 2, 3, 1, 4, 2, 7, 3, 2, 5, 2, 4, 1, 4, 1, 2, 3, 7, 2, 7, 2, 1]
+//     },
+//   ]
+// };
 
-const options = {
-  type: 'bar',
-  data: chartData,
-  scales: {
-    y: {
-      ticks: {
-        stepSize: 0
-      }
-    }
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'First semester attendance'
-      }
-    }
-  },
-};
-export default defineComponent({
+// const options = {
+//   type: 'bar',
+//   data: chartData,
+//   scales: {
+//     y: {
+//       ticks: {
+//         stepSize: 0
+//       }
+//     }
+//   },
+//   options: {
+//     responsive: true,
+//     plugins: {
+//       legend: {
+//         position: 'top',
+//       },
+//       title: {
+//         display: true,
+//         text: 'First semester attendance'
+//       }
+//     }
+//   },
+// };
+export default {
   name: "DashboardPage",
   components: {
     // ChartSection
   },
-  setup() {
-    const progress = ref(0.33)
-
-    return {
-      options,
-      chartData,
-      progress,
-      progressLabel: computed(() => (progress.value * 100) + '%'),
+  data(){
+    return{
+      progressValue: 30
     }
   },
-})
+}
 </script>
