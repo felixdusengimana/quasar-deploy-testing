@@ -1,9 +1,11 @@
 // screens
 import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
-import AssingmentsPage from 'pages/dashboard/AssignmentsPage.vue'
+import AssingmentsPage from 'src/pages/dashboard/assignments/AssignmentsPage.vue'
+import SingleAssignmentPage from 'src/pages/dashboard/assignments/SingleAssignmentPage.vue'
+
 import ClassePage from 'src/pages/dashboard/classes/ClassesPage.vue'
-import SingleAssignmentPage from 'pages/dashboard/SingleAssignmentPage.vue'
+
 import ForgotPassword from 'pages/auth/ForgotPassword.vue'
 import ResetPassword from 'pages/auth/ResetPassword.vue'
 import EnterOTP from 'pages/auth/EnterOTP.vue'

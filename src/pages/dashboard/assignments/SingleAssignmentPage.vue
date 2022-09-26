@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import QuizComponent from "../../components/molecules/QuizComponent.vue";
+import QuizComponent from "../../../components/molecules/QuizComponent.vue";
   export default{
     name: "single-assignment",
     data() {
