@@ -26,7 +26,7 @@
   </div>
 
   <!-- courses view  -->
-  <div class="tw-h-[70vh] tw-w-full tw-flex md:tw-flex-row tw-flex-col tw-mt-3">
+  <div class="tw-h-[70vh] tw-w-full tw-flex md:tw-flex-row tw-flex-col tw-mt-3 tw-pr-16">
     <div class="md:tw-min-w-[423px] tw-max-w-10 md:tw-pl-14 tw-pl-0 tw-w-fit tw-h-full tw-overflow-auto">
       <div class="tw-border-l-4 tw-pb-3" v-for="(week, index) in lesson_data" :key="'week'+index">
        <p class="tw-bg-white tw-ml-[-20px] tw-py-2">{{week.title}}</p>
@@ -79,7 +79,10 @@
     </div>
     </div>
 
-   <ClassTextContent/>
+   <div class="tw-h-full tw-overflow-auto">
+    <ClassTextContent v-if="!isVideo"/>
+   <ClassVideoContentPage v-else/>
+   </div>
   </div>
 
 </div>
@@ -87,10 +90,12 @@
 
 <script>
 import ClassTextContent from 'src/components/dashboard/ClassTextContent.vue';
+import ClassVideoContentPage from 'src/components/dashboard/ClassVideoContentPage.vue';
   export default{
     data() {
         return {
            selectedIndex: '',
+           isVideo: false,
             lesson_data: [
                 {
                     title: "Week 1",
@@ -242,6 +247,6 @@ import ClassTextContent from 'src/components/dashboard/ClassTextContent.vue';
             ]
         };
     },
-    components: { ClassTextContent }
+    components: { ClassVideoContentPage, ClassTextContent }
 }
 </script>
