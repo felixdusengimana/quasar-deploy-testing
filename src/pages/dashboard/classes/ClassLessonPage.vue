@@ -95,7 +95,7 @@ import ClassVideoContentPage from 'src/components/dashboard/ClassVideoContentPag
     data() {
         return {
            selectedIndex: '',
-           isVideo: false,
+           isVideo: true,
             lesson_data: [
                 {
                     title: "Week 1",
