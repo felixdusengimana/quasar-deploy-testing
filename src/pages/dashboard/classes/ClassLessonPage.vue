@@ -27,7 +27,7 @@
 
   <!-- courses view  -->
   <div class="tw-h-[70vh] tw-w-full tw-flex md:tw-flex-row tw-flex-col tw-mt-3">
-    <div class="md:tw-w-[423px] tw-max-w-10 md:tw-pl-14 tw-pl-0 tw-w-fit tw-h-full tw-overflow-auto">
+    <div class="md:tw-min-w-[423px] tw-max-w-10 md:tw-pl-14 tw-pl-0 tw-w-fit tw-h-full tw-overflow-auto">
       <div class="tw-border-l-4 tw-pb-3" v-for="(week, index) in lesson_data" :key="'week'+index">
        <p class="tw-bg-white tw-ml-[-20px] tw-py-2">{{week.title}}</p>
       <q-list class="tw-w-full tw-my-10 ">
@@ -39,12 +39,15 @@
           :label="week_course.title"
           :caption="week_course.topics.length+' Topics'"
           expand-icon-class="tw-text-black"
-          class="tw-font-bold tw-text-base text-black tw-border-b-2 tw-border-gray-200"
+          class="tw-font-bold tw-text-base text-black"
         >
-         <q-card
+         <q-item
          v-for="(topic, index) in week_course.topics"
           :key="'topic'+index"
-          class="tw-flex tw-max-h-[65px] tw-w-full tw-justify-between tw-border tw-py-5 tw-px-3 tw-cursor-pointer">
+          :onclick="()=>selectedIndex = (index+topic.title)"
+          :class="selectedIndex === (index+topic.title) ? 'tw-border-[#FB6765] tw-border-l-8 tw-bg-[#F0F0F0]':'tw-border-2 tw-border-gray-200 tw-bg-white'"
+          class="tw-flex tw-max-h-[65px] tw-w-full tw-justify-between tw-py-5 tw-px-3 tw-cursor-pointer tw-duration-300 tw-transition-all"
+          >
 
          <div class="tw-flex tw-gap-12">
           <svg v-if="topic.completed" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,177 +72,176 @@
         <img v-else src="~assets/icons/video_player.svg" alt="">
         </div>
 
-        </q-card>
+        </q-item>
         </q-expansion-item>
       </q-list>
 
     </div>
     </div>
+
+   <ClassTextContent/>
   </div>
 
 </div>
 </template>
 
 <script>
+import ClassTextContent from 'src/components/dashboard/ClassTextContent.vue';
   export default{
-    data(){
-      return{
-        lesson_data: [
-           {
-            title: 'Week 1',
-            chapter:[{
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Focus of UI/UX Design',
-                duration: '30',
-                video: null,
-                completed: true,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              },
-              {
-                title: 'What is UX Design?',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              },
-              {
-                title: 'Research',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            quiz: [
-              {
-                title: 'Empathise',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
+    data() {
+        return {
+           selectedIndex: '',
+            lesson_data: [
+                {
+                    title: "Week 1",
+                    chapter: [{
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Focus of UI/UX Design",
+                                    duration: "30",
+                                    video: null,
+                                    completed: true,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                },
+                                {
+                                    title: "What is UX Design?",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                },
+                                {
+                                    title: "Research",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    title: "Empathise",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ]
+                        }, {
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ]
+                        }, {
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ]
+                        }, {
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will\" give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ]
+                        }]
+                },
+                {
+                    title: "Week 2",
+                    chapter: [{
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                        }]
+                },
+                {
+                    title: "Week 3",
+                    chapter: [{
+                            title: "Introduction and course overview",
+                            description: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                            duration: "30",
+                            topics: [
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                },
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                },
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: null,
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                },
+                                {
+                                    title: "Introduction",
+                                    duration: "30",
+                                    video: "https://www.youtube.com/embed/7lCDEYXw3mM",
+                                    content: "This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.",
+                                }
+                            ],
+                        }]
+                },
             ]
-
-          },
-          {
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            quiz: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ]
-
-          },
-          {
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            quiz: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ]
-
-          },
-          {
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            quiz: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will" give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ]
-          }]
-          },
-          {
-            title: 'Week 2',
-            chapter:[{
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            }]
-          },
-          {
-            title: 'Week 3',
-            chapter:[{
-            title: 'Introduction and course overview',
-            description: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-            duration: '30',
-            topics: [
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              },
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              },
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: null,
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              },
-              {
-                title: 'Introduction',
-                duration: '30',
-                video: "https://www.youtube.com/embed/7lCDEYXw3mM",
-                content: 'This is the first lesson of the course. This lesson will give you an overview of the course and the topics that will be covered in this course.',
-              }
-            ],
-            }]
-          },
-        ]
-      }
-    }
-  }
+        };
+    },
+    components: { ClassTextContent }
+}
 </script>
