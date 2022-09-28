@@ -4,12 +4,29 @@
       <p class="tw-text-white tw-text-xl tw-font-bold">First Semester Month1: Assignment {{$route.params.id}}</p>
     </div>
     <div class="tw-my-5 tw-px-16 tw-w-full">
-      <router-link to="/assignment" class="tw-bg-[#000060] tw-w-fit tw-text-white tw-flex tw-items-center tw-font-bold tw-text-base tw-py-2 tw-px-8 tw-rounded-md">
+      <router-link to="/assignment" class="tw-bg-[#000060] tw-w-fit tw-text-white tw-flex tw-gap-1 tw-items-center tw-font-bold tw-text-base tw-py-2 tw-px-8 tw-rounded-md">
         <img class="" src="~assets/icons/caret-left.svg"/>
         Back
       </router-link>
 
-      <QuizComponent :questions="questions"/>
+      <div class="tw-w-fit q-mx-auto tw-mb-10 tw-text-center">
+         <h1 class="tw-text-[#1E136B] tw-font-normal tw-text-4xl">Introduction to Product design</h1>
+         <p class="tw-text-base">Use the editor below to submit  your work . do not copy and paste your answers type them into the spaces provided</p>
+         <div class="tw-flex tw-gap-2 tw-justify-center">
+         <div>
+          <p>Assignment Due Date:</p>
+          <p>The Start Date:     </p>
+          <p>Last Updated        </p>
+         </div>
+         <div class="tw-font-bold">
+          <p>21st October, 2022 (GMT+1)</p>
+          <p>21st October, 2022 (GMT+1)</p>
+          <p>21st October, 2022 (GMT+1)</p>
+         </div>
+         </div>
+      </div>
+
+      <QuizComponent/>
     </div>
   </div>
 </template>
