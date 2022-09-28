@@ -1,5 +1,5 @@
 <template>
-  <q-list class="tw-w-fit lg:tw-w-[1091px] tw-mx-auto tw-mt-8">
+  <q-list class="tw-w-fit lg:tw-w-[65vw] tw-mx-auto tw-mt-8">
     <q-expansion-item
     v-for="(assignment, index) in all_assingments"
     :key="'container'+index"
