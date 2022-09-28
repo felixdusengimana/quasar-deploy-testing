@@ -122,14 +122,14 @@
       <editor-content :editor="editor" class="editor-field"/>
     </div>
   </div>
-  <div class="tw-mt-3 tw-flex tw-justify-center tw-gap-32">
+  <!-- <div class="tw-mt-3 tw-flex tw-justify-center tw-gap-32">
       <button class="tw-bg-[#000060] tw-w-fit tw-text-white tw-font-regula tw-text-base tw-py-2 tw-px-8 tw-rounded-full">
         Previous
       </button>
       <button @click="submitData" class="tw-text-[#000060] tw-border tw-border-[#000060] tw-w-fit tw-bg-white tw-font-regular tw-text-base tw-py-2 tw-px-8 tw-rounded-full">
         Next
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
 

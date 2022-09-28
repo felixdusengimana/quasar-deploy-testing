@@ -1,37 +1,58 @@
 <template>
-  <div class="tw-border-[1.5px] tw-p-12 tw-border-[#BFBFBF] tw-rounded-lg">
-    <h1 class="tw-font-bold tw-text-base tw-mb-3">Question 1</h1>
-    <div class="tw-mb-8">
-      <p class="tw-mb-2">Prepare a project proposal in any format that fits on one 8.5x11 page (one side only). Sample proposals from previous classes are available above. We will photocopy the proposals and distribute them in Ses #3. Proposals should include:</p>
-       <ul class="tw-list-disc">
-        <li>A brief, descriptive project title (2-4 words). This is critical!</li>
-        <li>The 3 nearest competitors (existing solutions) and price.</li>
-        <li>Your name, phone number, email, department/degree program, and year.</li>
-        <li>A description of the product opportunity you have identified. Your description may include any of the following: Documentation of the market need, shortcomings of existing competitive products, and definition of the target market and its size.</li>
-        <li>Please do not present any of your own product ideas or solutions at this point; our strict focus in this phase of the course is on the market opportunity and not on solution concepts.</li>
-       </ul>
-    </div>
-    <div>
-      <text-editor @submit='getTextContent'/>
-      <!-- <pre><code>{{ editor }}</code></pre> -->
-    </div>
-  </div>
-</template>
+<div class="tw-w-fit q-mx-auto tw-pb-10">
+  <QuestionCodeEditor  v-if="currentQuestionType==0"/>
+  <CompareInterfaceQuestions v-else-if="currentQuestionType===1"/>
+  <MultipleChoiseQuestion :questions="questions" v-else/>
+<!--
+  <div class="tw-w-full tw-flex tw-justify-between tw-items-center">
+          <q-btn :disable="currentQuestion==0" class="tw-bg-primary-bg-color tw-text-white tw-text-base tw-font-normal text-center px-5 py-3 tw-rounded-lg tw-mt-3">Previous</q-btn>
+          <q-btn :onclick="nextQuestion" :disable="currentQuestion==questions.length+1 || !selectedOption" class="tw-bg-primary-bg-color tw-text-white tw-text-base tw-font-normal text-center px-5 py-3 tw-rounded-lg tw-mt-3">Next</q-btn>
+        </div> -->
 
+        <div class="tw-mt-3 tw-flex tw-justify-center tw-gap-32">
+      <button class="tw-bg-[#000060] tw-w-fit tw-text-white tw-font-regula tw-text-base tw-py-2 tw-px-8 tw-rounded-full">
+        Previous
+      </button>
+      <button @click="nextQuestion" class="tw-text-[#000060] tw-border tw-border-[#000060] tw-w-fit tw-bg-white tw-font-regular tw-text-base tw-py-2 tw-px-8 tw-rounded-full">
+        Next
+      </button>
+    </div>
+
+</div>
+</template>
 <script>
-import TextEditor from '../text-editor/TextEditor.vue'
+import MultipleChoiseQuestion from './questions/MultipleChoiseQuestion.vue';
+import CompareInterfaceQuestions from './questions/CompareInterfaceQuestions.vue';
+import QuestionCodeEditor from './questions/QuestionCodeEditor.vue';
   export default{
-  data(){
-    return{
-      editor: ''
-    }
-  },
-  components: { TextEditor },
-  methods: {
-    getTextContent(content) {
-      alert(content)
-      this.editor = content
-    }
-  },
-  }
+    name: "quiz-component",
+    props: {
+        questions: {
+            type: Array,
+            required: true
+        }
+    },
+    data(){
+      return{
+        currentQuestionType: 0,
+      }
+    },
+    methods: {
+        checkAnswer() {
+            alert(this.right);
+        },
+        nextQuestion() {
+            if(this.currentQuestionType+1<3){
+                this.currentQuestionType++;
+            }else{
+                this.currentQuestionType=0;
+            }
+            window.scrollTo(0,0);
+        },
+    },
+    setup(props) {
+        props.questions;
+    },
+    components: { MultipleChoiseQuestion, CompareInterfaceQuestions, QuestionCodeEditor }
+}
 </script>

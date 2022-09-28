@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="tw-w-full tw-bg-primary-bg-color tw-h-[75px] tw-text-center tw-flex tw-justify-center tw-items-center">
       <p class="tw-text-white tw-text-xl tw-font-bold">First Semester Month1: Assignment {{$route.params.id}}</p>
     </div>
@@ -8,31 +7,12 @@
         <img class="" src="~assets/icons/caret-left.svg"/>
         Back
       </router-link>
-
-      <div class="tw-w-fit q-mx-auto tw-mb-10 tw-text-center">
-         <h1 class="tw-text-[#1E136B] tw-font-normal tw-text-4xl">Introduction to Product design</h1>
-         <p class="tw-text-base">Use the editor below to submit  your work . do not copy and paste your answers type them into the spaces provided</p>
-         <div class="tw-flex tw-gap-2 tw-justify-center">
-         <div>
-          <p>Assignment Due Date:</p>
-          <p>The Start Date:     </p>
-          <p>Last Updated        </p>
-         </div>
-         <div class="tw-font-bold">
-          <p>21st October, 2022 (GMT+1)</p>
-          <p>21st October, 2022 (GMT+1)</p>
-          <p>21st October, 2022 (GMT+1)</p>
-         </div>
-         </div>
-      </div>
-
-      <QuizComponent/>
     </div>
-  </div>
+    <QuizComponent :questions="questions"/>
 </template>
 
 <script>
-import QuizComponent from "../../../components/molecules/QuizComponent.vue";
+import QuizComponent from 'src/components/molecules/QuizComponent.vue';
   export default{
     name: "single-assignment",
     data() {
