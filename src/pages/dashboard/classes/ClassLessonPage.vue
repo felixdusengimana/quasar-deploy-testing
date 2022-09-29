@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-mt-3 tw-flex tw-flex-col">
+  <div class="tw-mt-3 tw-flex tw-flex-col tw-overflow-hidden">
 
     <!-- <header></header> -->
     <div class="tw-flex tw-items-center tw-gap-6 md:tw-flex-row tw-flex-col">
