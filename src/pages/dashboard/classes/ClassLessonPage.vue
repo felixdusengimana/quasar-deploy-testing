@@ -82,6 +82,7 @@
         <div
           v-for="(quiz, index) in week.quizes"
           :key="'quiz'+index"
+          :onclick="()=>$router.push({path:'/assignments/'+quiz.id})"
           :class="selectedIndex === (index+quiz.title) ? 'tw-border-[#FB6765] tw-border-l-8 tw-bg-[#F0F0F0]':'tw-border-2 tw-border-gray-200 tw-bg-white'"
           class="tw-flex tw-max-h-[65px] tw-w-full tw-justify-between tw-py-5 tw-px-3 tw-cursor-pointer tw-duration-300 tw-transition-all"
           >
@@ -204,6 +205,7 @@ import ClassVideoContentPage from 'src/components/dashboard/ClassVideoContentPag
                         }],
                         quizes: [
                                 {
+                                  id: 1,
                                    title: "Quiz 1",
                                     duration: "30",
                                     video: null,
