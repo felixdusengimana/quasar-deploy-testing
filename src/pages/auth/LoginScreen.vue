@@ -30,7 +30,7 @@
           <input class="tw-h-[14.22px]" type="checkbox" name="remember" id="remember"/>
           <p>Rember me</p>
         </label>
-        <button type="submit" class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-bg-[#000060] tw-h-[67px] tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
+        <button :onclick="()=>{$router.push({ path: '/dashboard', replace: true })}" type="button" class="md:tw-w-full lg:tw-w-full tw-w-11/12 tw-bg-[#000060] tw-h-[67px] tw-text-white tw-rounded-none tw-text-sm tw-capitalize">
           Continue
         </button>
         <router-link to="/forgot-password" class="tw-text-[#1E136B] tw-text-sm tw-block tw-my-5 tw-text-center tw-underline tw-cursor-pointer">Forgot password?</router-link>
