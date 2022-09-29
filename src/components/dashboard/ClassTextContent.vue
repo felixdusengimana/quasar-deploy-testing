@@ -26,12 +26,12 @@ It’s generally agreed that there are significant overlaps between the roles of
 
        </p>
 
-       <svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg"
+       <!-- <svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg"
        class="tw-fixed tw-bottom-5 tw-right-28">
         <circle cx="33.5" cy="33.5" r="33.5" fill="#FB6765"/>
         <rect x="14" y="19" width="39.1183" height="24.1112" fill="white"/>
         <path d="M33.9528 49.8633L27.0654 41.0732H40.8403L33.9528 49.8633Z" fill="white"/>
-        </svg>
+        </svg> -->
 
     </div>
 </template>
