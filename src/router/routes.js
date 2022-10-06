@@ -85,6 +85,11 @@ const routes = [
       name: 'class-lesson',
       component: () => ClassLessonPage,
     },
+    {
+      path: '/quiz/:id',
+      name: 'quiz',
+      component: () => import('pages/dashboard/QuizPage.vue'),
+    }
 ]
 },
 
