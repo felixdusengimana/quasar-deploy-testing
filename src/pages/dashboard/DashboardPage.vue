@@ -1,6 +1,6 @@
 <template>
-  <div class="tw-mt-5 tw-max-w-[80vw] tw-border tw-border-[#D9D9D9] tw-flex tw-mx-auto md:tw-flex-row sm:tw-flex-col tw-rounded-xl tw-px-10">
-    <div class="tw-py-8 tw-border-r-[2px] tw-pr-10">
+  <div class="tw-mt-5 tw-max-w-[80vw] tw-border tw-border-[#D9D9D9] tw-flex tw-mx-auto md:tw-flex-row sm:tw-flex-col tw-rounded-xl tw-px-10 md:tw-flex-nowrap tw-flex-wrap">
+    <div class="tw-py-8 md:tw-border-r-[2px] tw-border-r-none tw-pr-10 md:tw-w-1/2 tw-w-full">
       <h1 class="tw-text-black tw-font-semibold tw-text-3xl tw-mb-2">Welcome back Musa!</h1>
       <div class="tw-flex tw-gap-2 tw-items-center tw-mb-3">
         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,13 +9,13 @@
         <p class="tw-text-black tw-font-normal tw-text-base">You are behind your weekly goals</p>
       </div>
        <div class="tw-flex tw-items-center tw-gap-3 tw-mb-16">
-        <p class="tw-font-bold tw-text-sm">Timline 17 Aug - 30 Aug</p>
+        <p class="tw-font-bold tw-text-sm">Timeline 17 Aug - 30 Aug</p>
         <q-btn class="tw-bg-[#1E136B] tw-capitalize tw-text-white tw-text-xs tw-max-w-[52px] tw-h-[23px]">Edit</q-btn>
        </div>
 
-       <div class="tw-flex tw-gap-3 tw-items-center">
-        <img class="tw-object-cover tw-max-w-[184px] tw-h-[129px] tw-rounded-lg" src="~assets/img/course_default.png" alt="">
-        <div>
+       <div class="tw-flex tw-gap-3 tw-items-center lg:tw-flex-nowrap tw-flex-wrap">
+        <img class="tw-object-cover tw-w-1/2 tw-h-[129px] tw-rounded-lg" src="~assets/img/course_default.png" alt="">
+        <div class="md:tw-max-w-1/2 tw-w-full">
           <p class="tw-text-black tw-font-bold tw-text-base">Intoduction to Product design</p>
           <div class="tw-flex justify-between tw-items-center tw-mb-3 tw-mt-2">
             <p class="tw-text-black tw-font-normal tw-text-sm">Week 1</p>
@@ -29,8 +29,9 @@
 
        </div>
     </div>
-    <div class="tw-py-8 tw-px-7 tw-grow">
-       <div class="tw-flex justify-between">
+
+    <div class="tw-py-8 tw-px-5 tw-grow">
+       <div class="tw-flex justify-between  tw-flex-wrap md:tw-flex-nowrap">
         <div>
         <p class="tw-text-black tw-font-normal tw-text-base">Your Learning Badges</p>
         <div class="tw-flex tw-flex-row tw-gap-1 tw-mt-4">
@@ -76,7 +77,7 @@
         </div>
        </div>
        </div>
-       <div class="tw-flex tw-justify-between">
+       <div class="tw-flex md:tw-justify-between  tw-flex-wrap lg:tw-flex-nowrap tw-justify-start">
         <div class="tw-w-[156px] tw-h-[116px] tw-shadow-form tw-border-[0.8px] tw-border-[#E3E3E3] tw-rounded tw-py-5 tw-px-4">
             <div class="tw-flex tw-items-center tw-gap-2">
               <p class="tw-text-3xl tw-font-bold">30%</p>

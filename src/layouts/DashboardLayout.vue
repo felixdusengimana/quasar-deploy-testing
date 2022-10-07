@@ -1,9 +1,9 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" class="tw-flex tw-flex-col">
     <DashNavbar/>
     <Sidebar/>
 
-    <q-page-container>
+    <q-page-container class="tw-h-screen">
       <router-view />
     </q-page-container>
 

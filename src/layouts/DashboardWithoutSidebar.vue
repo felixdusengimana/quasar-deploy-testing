@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" >
     <DashNavbar :withLogo="true"/>
     <q-page-container>
       <router-view />
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import DashNavbar from 'src/components/dashboard/DashNavbar.vue'
 
 export default defineComponent({
