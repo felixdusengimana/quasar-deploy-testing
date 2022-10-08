@@ -68,6 +68,23 @@ const routes = [
       },
     ]
   },
+  // management links, only accessible by admin
+  {
+    path: '/management/dashboard',
+    name: 'management-dashboard',
+    component: () => import('layouts/DashboardLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/management/ManagementDashboard.vue')
+      },
+      {
+        path: '/management/students',
+        name: 'students',
+        component: () => import('pages/management/StudentsPage.vue'),
+      },
+    ]
+  },
 
   //with no sidebar
   {

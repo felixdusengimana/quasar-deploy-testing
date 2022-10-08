@@ -3,6 +3,9 @@
     :class="withLogo&&'md:tw-px-12 sm:tw-px-0'">
       <q-toolbar>
         <img v-if="withLogo" src="~assets/logo.svg"/>
+        <p class="tw-text-black tw-font-bold tw-text-2xl">
+         {{this.$route.name?.toLowerCase()=='students'? 'All Students':''}}
+        </p>
         <q-space />
         <div class="tw-flex tw-items-center tw-gap-10">
           <img src="~assets/icons/settings.svg"/>
@@ -44,6 +47,6 @@ export default {
   },
   setup(props){
      props.withLogo;
-  }
+  },
 };
 </script>

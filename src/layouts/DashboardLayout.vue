@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import DashNavbar from 'src/components/dashboard/DashNavbar.vue'
 import Sidebar from 'src/components/dashboard/Sidebar.vue';
 
