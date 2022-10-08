@@ -3,7 +3,7 @@
  <div class="tw-flex tw-justify-between">
   <Dropdown :dropdownlist="filter_statuses" :onItemClick="onStatusSelect"/>
   <SearchInput :placeholder="'Search student by any keyword'"/>
-  <Dropdown :dropdownlist="filter_courses" :onItemClick="onCoureSelect" :rounded="'sm'" :icon="'md-list'" :noAnimation="true"/>
+  <Dropdown :dropdownlist="filter_courses" :onItemClick="onCoureSelect" :rounded="'sm'" :icon="'none'" :noAnimation="true"/>
  </div>
  <table class="tw-table tw-w-full tw-mt-9">
   <thead class="tw-bg-[#F2F2FF]">
@@ -47,7 +47,7 @@
       <td colspan="4" class="">
          <div class="tw-w-full tw-flex tw-justify-end tw-pr-2">
           <Pagination
-          :totalPage="108"/>
+          :totalPage="12"/>
          </div>
       </td>
     </tr>

@@ -8,7 +8,7 @@
         </p>
         <q-space />
         <div class="tw-flex tw-items-center tw-gap-10">
-          <img src="~assets/icons/settings.svg"/>
+          <img v-if="!noSettingsIcon" src="~assets/icons/settings.svg"/>
           <img src="~assets/icons/bell.svg"/>
           <div class="tw-bg-[#F0F0F0] tw-rounded-full tw-py-3 tw-px-4">
           <q-btn-dropdown
@@ -43,6 +43,10 @@ export default {
     withLogo: {
       type: String,
       required: true
+    },
+    noSettingsIcon: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props){

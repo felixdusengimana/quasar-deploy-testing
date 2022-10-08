@@ -1,11 +1,11 @@
 <template>
+    <div class="tw-bg-[#F0F0F0] tw-py-3 tw-px-4 tw-flex tw-w-fit" :class="'tw-rounded-'+rounded">
       <q-btn-dropdown
             color="black"
             no-caps
             dense
             flat
             :dropdown-icon="icon?icon:'mdi-chevron-down'"
-            padding="none"
             :no-icon-animation="noAnimation"
           >
           <template v-slot:label>
@@ -19,6 +19,7 @@
                 </q-item>
             </q-list>
       </q-btn-dropdown>
+    </div>
 </template>
 
 <script>

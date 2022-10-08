@@ -72,7 +72,7 @@ const routes = [
   {
     path: '/management/dashboard',
     name: 'management-dashboard',
-    component: () => import('layouts/DashboardLayout.vue'),
+    component: () => import('layouts/ManagementLayout.vue'),
     children: [
       {
         path: '',
