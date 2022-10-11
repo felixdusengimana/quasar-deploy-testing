@@ -106,6 +106,11 @@ const routes = [
       path: '/quiz/:id',
       name: 'quiz',
       component: () => import('pages/dashboard/QuizPage.vue'),
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('pages/dashboard/SettingsPage.vue'),
     }
 ]
 },
