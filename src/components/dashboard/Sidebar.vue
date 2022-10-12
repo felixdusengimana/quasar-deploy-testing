@@ -96,6 +96,33 @@
           exact
           clickable
           active-class="bg-white"
+          :to="{ name: 'performance' }"
+          class="tw-pl-10 tw-mt-3"
+        >
+          <q-item-section
+            avatar
+          >
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_1206_264" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+            <rect width="28" height="28" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_1206_264)">
+            <path d="M3.5 24.5V22.1667L5.83333 19.8333V24.5H3.5ZM8.16667 24.5V17.5L10.5 15.1667V24.5H8.16667ZM12.8333 24.5V15.1667L15.1667 17.5292V24.5H12.8333ZM17.5 24.5V17.5292L19.8333 15.1958V24.5H17.5ZM22.1667 24.5V12.8333L24.5 10.5V24.5H22.1667ZM3.5 18.4625V15.1667L11.6667 7L16.3333 11.6667L24.5 3.5V6.79583L16.3333 14.9625L11.6667 10.2958L3.5 18.4625Z"
+            :fill="this.$route.fullPath==='/performance'?'#00009F':'white'"/>
+            <circle cx="24.5" cy="4.5" r="3.5" fill="#FF0000"/>
+            </g>
+          </svg>
+
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="tw-text-white tw-text-base tw-font-bold -tw-ml-5" :class="this.$route.fullPath==='/performance'&&'tw-text-[#00009F]'">Performance</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item
+          exact
+          clickable
+          active-class="bg-white"
           to="/payment"
           class="tw-pl-10 tw-mt-3"
         >

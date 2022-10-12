@@ -52,6 +52,11 @@ const routes = [
         component: () => import('pages/dashboard/VideosPage.vue'),
       },
       {
+        path: '/performance',
+        name: 'performance',
+        component: () => import('pages/dashboard/PerformancePage.vue'),
+      },
+      {
         path: '/payment',
         name: 'payment',
         component: () => import('pages/dashboard/PaymentsPage.vue'),
