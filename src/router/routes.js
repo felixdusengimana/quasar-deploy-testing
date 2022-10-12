@@ -62,6 +62,11 @@ const routes = [
         component: () => import('pages/dashboard/PaymentsPage.vue'),
       },
       {
+        path: '/helps',
+        name: 'helps',
+        component: () => import('pages/dashboard/HelpsPage.vue'),
+      },
+      {
         path: '/assignments',
         name: 'assignments',
         component: () => AssingmentsPage,
