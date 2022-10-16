@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import InfoSafelyStored from 'src/pages/dashboard/InfoSafelyStored.vue';
+import InfoSafelyStored from 'src/components/atoms/InfoSafelyStored.vue';
   export default {
     name: "TermAndCondition",
     props: {

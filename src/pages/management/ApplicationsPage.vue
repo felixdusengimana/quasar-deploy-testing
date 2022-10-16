@@ -1,8 +1,7 @@
 <template>
   <div class="container tw-px-7 tw-mt-7">
  <div class="tw-flex tw-justify-between">
-  <Dropdown :dropdownlist="filter_statuses" :onItemClick="onStatusSelect" :pageHeader="true"/>
-  <SearchInput :placeholder="'Search student by any keyword'"/>
+  <SearchInput :placeholder="'Search application by any keyword'"/>
   <Dropdown :dropdownlist="filter_courses" :onItemClick="onCoureSelect" :rounded="'sm'" :icon="'none'" :noAnimation="true"/>
  </div>
  <table class="tw-table tw-w-full tw-mt-9">
@@ -13,7 +12,7 @@
       <td>email</td>
       <td>Country</td>
       <td>Track</td>
-      <td>Status</td>
+      <td>Date</td>
       <td></td>
     </tr>
   </thead>
@@ -31,8 +30,7 @@
       <td>{{data.country}}</td>
       <td>{{data.track}}</td>
       <td>
-        <p :class="data?.status.toLowerCase()==='not admitted'?'tw-bg-[#FEE2E2] tw-text-[#FF0000] tw-border-[#FF0000]':'tw-bg-[#C3FDD7] tw-text-[#00A600] tw-border-[#00A600]'"
-        class="tw-w-fit tw-px-1 tw-py-[6px] tw-rounded-sm tw-border">{{data.status}}</p>
+        <p class="tw-w-fit tw-px-1 tw-py-[6px]">{{data.date}}</p>
       </td>
       <td class="">
         <q-btn flat round dense icon="more_vert" color="black" />
@@ -61,42 +59,30 @@
 import SearchInput from "../../components/molecules/SearchInput.vue";
 import Dropdown from "src/components/molecules/Dropdown.vue";
 import Pagination from "src/components/molecules/Pagination.vue";
-import {store} from '../../data/store.js';
+import {store} from "../../data/store.js";
 
 export default {
     name: "StudentPage",
     data() {
         return {
-            store,
+           store,
             router: this.$route.params.id,
-          filter_statuses: [{
+            filter_courses: [{
               id: 1,
-              value: "all students"
+              value: "Product design school"
             },
             {
               id: 2,
-              value: "all registered student"
+              value: "Management school"
             },
             {id: 3,
-            value: "all active"
-          },
+            value: "Software engineering school"
+             },
             {
               id: 4,
-              value: "all inactive"
+              value: "Data school"
 
-            },{
-              id: 5,
-              value: "all admitted"
-            }],
-
-          filter_courses: [{
-              id: 1,
-              value: "frontend development"
-            },
-            {
-              id: 2,
-              value: "backend development"
-            },
+            }
           ],
           filters: {
                 status: "all students",
@@ -112,7 +98,7 @@ export default {
               email: "johndoe@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "active"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -122,7 +108,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -132,7 +118,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -142,7 +128,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -152,7 +138,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -162,7 +148,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -172,7 +158,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -182,7 +168,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -192,7 +178,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
             {
               id: 2,
@@ -202,37 +188,7 @@ export default {
               email: "another@gmail.com",
               country: "India",
               track: "frontend development",
-              status: "Not admitted"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
+              date: "01/10/2022"
             },
           ],
           page: 2,
@@ -246,19 +202,18 @@ export default {
       };
     },
     methods: {
-       onStatusSelect(value) {
-            this.filters.status = value;
+       ondateSelect(value) {
+            this.filters.date = value;
         },
         onCoureSelect(value) {
             this.filters.course = value;
         },
-    onPageChange(page) {
-      console.log(page)
-      this.currentPage = page;
-    }
+        onPageChange(page) {
+        this.currentPage = page;
+      }
   },
   mounted() {
-    store.setHeaderTitle(this.filter_statuses[0].value);
+    store.setHeaderTitle("Applications");
   },
   unmounted() {
     store.setHeaderTitle("");

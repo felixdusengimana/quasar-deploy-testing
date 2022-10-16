@@ -12,17 +12,22 @@
               <p class="tw-text-sm tw-font-semiBold tw-capitalize">{{selected?selected:placeholder}}</p>
           </template>
             <q-list dense>
-              <q-item clickable v-ripple v-close-popup @click="onSelectItem(data)" v-for="(data, index) in dropdownlist" :key="index">
+              <template v-for="(data, index) in dropdownlist" :key="index">
+              <q-item :clickable="data.value!=='divider'" v-ripple v-close-popup @click="onSelectItem(data)">
                 <q-item-section class="tw-p-0">
-                  <q-item-label class="first-letter:tw-capitalize">{{data.value}}</q-item-label>
+                  <q-item-label v-if="data.value!=='divider'" class="first-letter:tw-capitalize">{{data.value}}</q-item-label>
+                  <q-separator v-else />
                 </q-item-section>
                 </q-item>
+              </template>
             </q-list>
       </q-btn-dropdown>
     </div>
 </template>
 
 <script>
+import {store} from '../../data/store.js';
+
 export default {
   name: "DropdownComponent",
   props: {
@@ -54,10 +59,15 @@ export default {
       type: Boolean,
       required: false,
       default: false
-    }
+    },
+    pageHeader: {
+      type: Boolean,
+      required: false,
+    },
   },
   data() {
     return {
+      store,
       selected: null
     };
   },
@@ -65,6 +75,9 @@ export default {
     onSelectItem(data) {
       this.selected = data.value;
       this.onItemClick(data);
+      if(this.pageHeader) {
+        this.store.setHeaderTitle(data.value);
+      }
     }
   },
   mounted() {

@@ -33,22 +33,22 @@ export default defineComponent({
                 {
                   name: 'School',
                   icon: 'school',
-                  to: '/management/school'
+                  to: '/management/schools'
                 },
                 {
                   name: 'Applications',
                   icon: 'assignment',
-                  to: '/management/application'
+                  to: '/management/applications'
                 },
                 {
                     name: 'Transaction',
                     icon: 'transaction',
-                    to: '/management/instructors'
+                    to: '/management/transactions'
                 },
                 {
                     name: 'User Management',
                     icon: 'usermanagement',
-                    to: '/management/settings'
+                    to: '/management/users'
                 },
             ]
         }

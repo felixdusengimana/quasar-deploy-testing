@@ -2,7 +2,7 @@
   <div class="container tw-px-7 tw-mt-7">
  <div class="tw-flex tw-justify-between">
   <Dropdown :dropdownlist="filter_statuses" :onItemClick="onStatusSelect" :pageHeader="true"/>
-  <SearchInput :placeholder="'Search student by any keyword'"/>
+  <SearchInput :placeholder="'Search school by any keyword'"/>
   <Dropdown :dropdownlist="filter_courses" :onItemClick="onCoureSelect" :rounded="'sm'" :icon="'none'" :noAnimation="true"/>
  </div>
  <table class="tw-table tw-w-full tw-mt-9">
@@ -61,42 +61,47 @@
 import SearchInput from "../../components/molecules/SearchInput.vue";
 import Dropdown from "src/components/molecules/Dropdown.vue";
 import Pagination from "src/components/molecules/Pagination.vue";
-import {store} from '../../data/store.js';
+import {store} from "../../data/store.js";
 
 export default {
     name: "StudentPage",
     data() {
         return {
-            store,
+           store,
             router: this.$route.params.id,
-          filter_statuses: [{
+            filter_statuses: [{
               id: 1,
-              value: "all students"
+              value: "Product Design School"
             },
             {
               id: 2,
-              value: "all registered student"
+              value: "Management school"
             },
             {id: 3,
-            value: "all active"
+            value: "Software engineering school"
           },
             {
               id: 4,
-              value: "all inactive"
+              value: "Data school"
 
-            },{
-              id: 5,
-              value: "all admitted"
             }],
 
-          filter_courses: [{
+            filter_courses: [{
               id: 1,
-              value: "frontend development"
+              value: "Product design"
             },
             {
               id: 2,
-              value: "backend development"
+              value: "UX writing"
             },
+            {id: 3,
+            value: "UX auditing"
+             },
+            {
+              id: 4,
+              value: "UX research"
+
+            }
           ],
           filters: {
                 status: "all students",
@@ -113,36 +118,6 @@ export default {
               country: "India",
               track: "frontend development",
               status: "active"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
-            },
-            {
-              id: 2,
-              name: "John Doe",
-              image: "https://cdn.quasar.dev/img/avatar.png",
-              contact: "1234567890",
-              email: "another@gmail.com",
-              country: "India",
-              track: "frontend development",
-              status: "Not admitted"
             },
             {
               id: 2,
@@ -252,10 +227,9 @@ export default {
         onCoureSelect(value) {
             this.filters.course = value;
         },
-    onPageChange(page) {
-      console.log(page)
-      this.currentPage = page;
-    }
+        onPageChange(page) {
+        this.currentPage = page;
+      }
   },
   mounted() {
     store.setHeaderTitle(this.filter_statuses[0].value);

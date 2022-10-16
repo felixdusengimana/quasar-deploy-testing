@@ -83,6 +83,26 @@ const routes = [
         name: 'students',
         component: () => import('pages/management/StudentsPage.vue'),
       },
+      {
+        path: '/management/schools',
+        name: 'schools',
+        component: () => import('pages/management/SchoolsPage.vue'),
+      },
+      {
+        path: '/management/applications',
+        name: 'applications',
+        component: () => import('pages/management/ApplicationsPage.vue'),
+      },
+      {
+        path: '/management/transactions',
+        name: 'transactions',
+        component: () => import('pages/management/TransactionsPage.vue'),
+      },
+      {
+        path: '/management/users',
+        name: 'users',
+        component: () => import('pages/management/UsersPage.vue'),
+      }
     ]
   },
 

@@ -48,7 +48,9 @@
 
        </div>
        <div>
-         <button class="t tw-bg-primary-bg-color tw-font-bold tw-flex tw-gap-6 tw-px-8 tw-py-6 tw-rounded-md">
+         <button
+         :onclick="openModal"
+         class="t tw-bg-primary-bg-color tw-font-bold tw-flex tw-gap-6 tw-px-8 tw-py-6 tw-rounded-md">
          <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M24.1667 3.00521V17.0052C24.1667 17.6469 23.9384 18.1964 23.4819 18.6537C23.0245 19.1103 22.475 19.3385 21.8334 19.3385H3.16671C2.52504 19.3385 1.97593 19.1103 1.51937 18.6537C1.06204 18.1964 0.833374 17.6469 0.833374 17.0052V3.00521C0.833374 2.36354 1.06204 1.81443 1.51937 1.35787C1.97593 0.900542 2.52504 0.671875 3.16671 0.671875H21.8334C22.475 0.671875 23.0245 0.900542 23.4819 1.35787C23.9384 1.81443 24.1667 2.36354 24.1667 3.00521ZM3.16671 5.33854H21.8334V3.00521H3.16671V5.33854ZM3.16671 10.0052V17.0052H21.8334V10.0052H3.16671Z" fill="white"/>
          </svg>
@@ -120,7 +122,6 @@
  </q-dialog>
 </template>
 <script>
-import { ref } from 'vue'
 import TermAndCondition from 'src/components/molecules/TermAndCondition.vue'
 import VisaCard from '../../components/dashboard/VisaCard.vue'
 import TransactionTable from 'src/components/dashboard/TransactionTable.vue';
@@ -131,17 +132,12 @@ export default{
          payments: [{
 
          }],
+         addCardModal: false,
          nameOnCard: '',
          cardNumer: '',
          cvv: '',
          paymentMethod: '',
          errors: [{message: '', field: ''}],
-     };
- },
- setup() {
-     const addCardModal = ref(false);
-     return {
-         addCardModal
      };
  },
  methods: {
@@ -155,7 +151,9 @@ export default{
              paymentMethod: this.paymentMethod
          }
          this.payments.push(payment);
-         console.log(this.payments);
+     },
+     openModal(){
+      this.addCardModal= true;
      }
  },
  components: { TermAndCondition, VisaCard, TransactionTable }
