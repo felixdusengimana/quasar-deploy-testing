@@ -99,7 +99,7 @@
      :getVal="getSelectValue"
      placeholder="Have access to:"
      name="gender"
-     :options="['Male', 'Female', 'Others']"/>
+     :options="['Overview', 'Student', 'School', 'Application', 'Transaction', 'User management']"/>
      </div>
 
      <div class="tw-w-full tw-border tw-border-[#000000] tw-text-sm tw-flex tw-items-center pr-10">
@@ -134,6 +134,7 @@
      </q-card-section>
      <q-card-section>
       <form>
+        <p class="tw-text-center -tw-mt-10 tw-mb-10 tw-font-bold tw-text-xl">Reset password</p>
         <input
        type="password"
        v-model="oldPassword"
