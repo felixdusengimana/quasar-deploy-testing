@@ -131,6 +131,11 @@ const routes = [
       path: '/settings',
       name: 'settings',
       component: () => import('pages/dashboard/SettingsPage.vue'),
+    },
+    {
+      path: '/management/students/:id/performance',
+      name: 'student-performance',
+      component: () => import('pages/management/StudentPerformancePage.vue'),
     }
 ]
 },
