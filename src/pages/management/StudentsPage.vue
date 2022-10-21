@@ -35,7 +35,27 @@
         class="tw-w-fit tw-px-1 tw-py-[6px] tw-rounded-sm tw-border">{{data.status}}</p>
       </td>
       <td class="">
-        <q-btn flat round dense icon="more_vert" color="black" />
+        <q-btn-dropdown
+       dense
+       flat
+       dropdown-icon="more_vert"
+       no-icon-animation
+       no-route-dismiss
+      >
+      <q-list>
+        <q-item dense clickable v-close-popup @click="$router.push('/management/students/'+data.id+'/performance')">
+          <q-item-section class="tw-text-black hover:tw-text-blue-700 hover:tw-underline">
+            <q-item-label class="tw-text-sm tw-font-normal">View performance</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-separator/>
+        <q-item dense clickable v-close-popup>
+          <q-item-section class="hover:tw-text-red-700 tw-text-red-600">
+            <q-item-label class="tw-text-sm tw-font-normal">Delete user</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-btn-dropdown>
       </td>
     </tr>
   </tbody>

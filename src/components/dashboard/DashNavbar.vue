@@ -9,7 +9,13 @@
         <q-space />
         <div class="tw-flex tw-items-center tw-gap-10">
           <img v-if="!noSettingsIcon" src="~assets/icons/settings.svg"/>
-          <img src="~assets/icons/bell.svg"/>
+          <div class="tw-relative">
+            <img src="~assets/icons/bell.svg"/>
+            <div v-if="notifications>0" class="tw-bg-[#FE0707] tw-w-5 tw-h-5 tw-absolute -tw-top-1 -tw-right-1 tw-rounded-full tw-flex tw-items-center tw-justify-center">
+              <p v-if="notifications<=9" class="tw-text-white tw-font-bold tw-text-xs">{{notifications}}</p>
+              <p v-else class="tw-text-white tw-font-bold tw-text-xs">9+</p>
+            </div>
+          </div>
           <div class="tw-bg-[#F0F0F0] tw-rounded-full tw-py-3 tw-px-4">
           <q-btn-dropdown
             color="black"
@@ -70,7 +76,8 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+      notifications: 3
     }
   },
   setup(props){
