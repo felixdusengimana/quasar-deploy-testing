@@ -10,8 +10,7 @@
       </div>
       <div class="tw-flex tw-flex-col tw-gap-4 tw-text-sm tw-capitalize">
         <p class="tw-text-gray-500">{{course}}</p>
-        <p class="tw-text-gray-500">{{
-          new Date(dateofbirth)}}</p>
+        <p class="tw-text-gray-500">{{getFormattedDate(dateofbirth)}}</p>
         <p class="tw-text-gray-500">{{country}}</p>
         <p class="tw-text-gray-500">{{state}}</p>
         <p class="tw-text-gray-500">{{gender}}</p>
@@ -21,6 +20,7 @@
 </template>
 
 <script>
+import {getFormattedDate} from 'src/utils/date';
 export default{
   name: 'ProfileRightSide',
   props:{
@@ -44,6 +44,9 @@ export default{
       type: String,
       default: ''
     }
+  },
+  methods:{
+    getFormattedDate
   }
 };
 </script>
