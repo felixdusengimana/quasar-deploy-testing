@@ -133,6 +133,11 @@ const routes = [
       component: () => import('pages/dashboard/SettingsPage.vue'),
     },
     {
+      path: '/profile/:userid',
+      name: 'profile',
+      component: () => import('pages/dashboard/ProfilePage.vue'),
+    },
+    {
       path: '/management/students/:id/performance',
       name: 'student-performance',
       component: () => import('pages/management/StudentPerformancePage.vue'),

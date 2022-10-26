@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf" >
     <DashNavbar :withLogo="true"/>
-    <q-page-container>
+    <q-page-container class="tw-h-screen">
       <router-view />
     </q-page-container>
 
