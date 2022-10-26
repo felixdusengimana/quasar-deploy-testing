@@ -133,14 +133,24 @@ const routes = [
       component: () => import('pages/dashboard/SettingsPage.vue'),
     },
     {
-      path: '/profile/:userid',
+      path: '/profile/:id',
       name: 'profile',
+      component: () => import('pages/dashboard/ProfilePage.vue'),
+    },
+    {
+      path: '/application/:id',
+      name: 'applicant-profile',
       component: () => import('pages/dashboard/ProfilePage.vue'),
     },
     {
       path: '/management/students/:id/performance',
       name: 'student-performance',
       component: () => import('pages/management/StudentPerformancePage.vue'),
+    },
+    {
+      path: "/management/payment/:id",
+      name: 'payment-history',
+      component: () => import('pages/management/PaymentHistoryPage.vue'),
     }
 ]
 },
