@@ -18,7 +18,6 @@
           placeholder="First name"
           class="lg:tw-w-[472px] tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"
         />
-        THis isis: {{firstName}}
         <input
           type="text"
           v-model="lastName"
@@ -36,16 +35,16 @@
           placeholder="Phone Number (+2349034848075)"
           class="lg:tw-w-[472px] tw-py-6 tw-p-4 tw-border tw-border-[#000000] tw-mb-6 tw-text-sm tw-outline-none"
         />
-        <SelectInput :getVal="getSelectValue" placeholder="Gender" name="gender" :options="['Male', 'Female', 'Others']"/>
+        <SelectInput :styles="'lg:tw-w-[472px] tw-w-1/2'" :getVal="getSelectValue" placeholder="Gender" name="gender" :options="['Male', 'Female', 'Others']"/>
     </div>
 
     <div class="tw-flex tw-flex-row tw-justify-between tw-w-full tw-gap-8">
-      <SelectInput :getVal="getSelectValue" placeholder="Country of Residence" name="country" :options="[]"/>
-      <SelectInput :getVal="getSelectValue" placeholder="State of Residence" name="state" :options="[]"/>
+      <SelectInput  :styles="'lg:tw-w-[472px] tw-w-1/2'"  :getVal="getSelectValue" placeholder="Country of Residence" name="country" :options="[]"/>
+      <SelectInput  :styles="'lg:tw-w-[472px] tw-w-1/2'"  :getVal="getSelectValue" placeholder="State of Residence" name="state" :options="[]"/>
     </div>
 
     <div class="tw-flex tw-flex-row tw-justify-between tw-w-full tw-gap-8">
-      <SelectInput :getVal="getSelectValue" placeholder="Level of education" name="educationLevel" :options="[]"/>
+      <SelectInput  :styles="'lg:tw-w-[472px] tw-w-1/2'"  :getVal="getSelectValue" placeholder="Level of education" name="educationLevel" :options="[]"/>
 
         <input
           type="date"
@@ -57,8 +56,8 @@
 
 
     <div class="tw-flex tw-flex-row tw-justify-between tw-w-full tw-gap-8">
-      <SelectInput :getVal="getSelectValue" placeholder="School  of Choice" name="schoolChoice" :options="[]"/>
-      <SelectInput :getVal="getSelectValue" placeholder="Course" name="course" :options="[]"/>
+      <SelectInput :styles="'lg:tw-w-[472px] tw-w-1/2'"  :getVal="getSelectValue" placeholder="School  of Choice" name="schoolChoice" :options="[]"/>
+      <SelectInput :styles="'lg:tw-w-[472px] tw-w-1/2'" :getVal="getSelectValue" placeholder="Course" name="course" :options="[]"/>
     </div>
 
     <div class="lg:tw-w-[474px] tw-h-[148px] tw-border tw-border-[#000000] tw-border-dashed tw-rounded-[10px] tw-mx-auto tw-mb-16">

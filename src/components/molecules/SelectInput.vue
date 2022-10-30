@@ -1,5 +1,5 @@
 <template>
-    <div class="tw-relative tw-font-manrope" :onmouseleave="closeDropDown">
+    <div :class="'tw-relative tw-font-manrope '+ styles" :onmouseleave="closeDropDown">
         <div class="tw-w-full tw-border tw-z-10 tw-border-black tw-mb-6 tw-text-sm tw-outline-none
     tw-flex tw-items-center">
       <input type="text" :onclick="opeClose" v-model="searchText" name="search_input" @change="handleSearch" :placeholder="placeholder" class="tw-w-11/12 tw-py-6 tw-p-4 tw-outline-none">
@@ -47,6 +47,10 @@ export default {
         getVal: {
             type: Function,
             required: true
+        },
+        styles: {
+            type: String,
+            required: false
         }
     },
 
