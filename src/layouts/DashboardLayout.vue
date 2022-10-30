@@ -37,6 +37,11 @@ export default defineComponent({
             icon: 'assignment',
           },
           {
+            name: 'Performance',
+            to: '/performance',
+            icon: 'performance',
+          },
+          {
             name: 'Payments',
             to: '/payment',
             icon: 'payments',
