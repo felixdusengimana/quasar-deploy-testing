@@ -1,4 +1,5 @@
 <template>
+  <div>
     <DashPageTitle :title="'Aminu Abdulrasheed - Product design track'"/>
     <div class="tw-flex tw-w-full tw-px-16">
       <div class="tw-w-3/5">
@@ -32,6 +33,7 @@
          </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>

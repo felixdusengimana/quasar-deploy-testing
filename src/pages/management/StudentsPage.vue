@@ -20,16 +20,18 @@
   <tbody>
     <tr v-for="(data, index) in students.data" :key="index" class="tw-border-b">
       <td class="tw-pl-6 tw-py-2">
-        <div class="tw-flex tw-gap-1 tw-items-center">
+        <router-link :to="'/profile/'+data.id">
+          <div class="tw-flex tw-gap-1 tw-items-center">
           <img :src="data.image" class="tw-w-10 tw-h-10 tw-rounded-full"/>
           <p class="tw-text-[#6B7280] tw-font-normal">{{data.id}}</p>
           <p class="tw-text-[#1F2937] tw-font-medium">{{data.name}}</p>
         </div>
+        </router-link>
       </td>
-      <td>{{data.contact}}</td>
-      <td>{{data.email}}</td>
-      <td>{{data.country}}</td>
-      <td>{{data.track}}</td>
+      <td><router-link :to="'/profile/'+data.id">{{data.contact}}</router-link></td>
+      <td><router-link :to="'/profile/'+data.id">{{data.email}}</router-link></td>
+      <td><router-link :to="'/profile/'+data.id">{{data.country}}</router-link></td>
+      <td><router-link :to="'/profile/'+data.id">{{data.track}}</router-link></td>
       <td>
         <p :class="data?.status.toLowerCase()==='not admitted'?'tw-bg-[#FEE2E2] tw-text-[#FF0000] tw-border-[#FF0000]':'tw-bg-[#C3FDD7] tw-text-[#00A600] tw-border-[#00A600]'"
         class="tw-w-fit tw-px-1 tw-py-[6px] tw-rounded-sm tw-border">{{data.status}}</p>
