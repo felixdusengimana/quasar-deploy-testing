@@ -14,6 +14,7 @@ module.exports = {
       },
       boxShadow: {
         'form': '0px 0px 1.67244px rgba(0, 0, 0, 0.12), 0px 16.7244px 16.7244px rgba(0, 0, 0, 0.08)',
+        'card': '2px 2px 10px rgba(0, 0, 0, 0.25)',
       },
       fontFamily: {
         'manrope': ['Manrope', 'sans-serif']

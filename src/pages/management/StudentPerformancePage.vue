@@ -1,9 +1,10 @@
 <template>
   <div>
     <DashPageTitle :title="'Aminu Abdulrasheed - Product design track'"/>
-    <div class="tw-flex tw-w-full tw-px-16">
+    <div v-for="(data, index) in all_data" :key="index">
+      <hr v-if="index!==0" class="tw-py-5">
+    <div class="tw-flex tw-w-full tw-items-start tw-pb-4">
       <div class="tw-w-3/5">
-        <div v-for="(data, index) in all_data" :key="index">
           <h1 class="tw-text-black tw-text-2xl tw-font-bold tw-leading-[33px] tw-text-center">{{data.title}}</h1>
           <table class="tw-mx-auto tw-my-9">
             <thead class="tw-bg-[#F2F2FF]">
@@ -26,11 +27,33 @@
             </tbody>
           </table>
         </div>
-      </div>
-      <div class="tw-grow">
-         <div>
-
-         </div>
+        <div class="tw-grow">
+          <q-card v-for="(performance, id) in data.performance" :key="id" class="tw-min-w-[334px] tw-rounded-lg bg-white tw-shadow-card tw-w-fit first:tw-mt-0 tw-mt-8">
+            <q-card-section class="tw-flex items-center tw-flex-col justify-center">
+              <h1 class="tw-text-black tw-text-2xl tw-font-bold tw-leading-[33px] tw-text-center">{{performance.title}}</h1>
+              <q-circular-progress
+              show-value
+              class="text-light-blue q-ma-md"
+              :value="performance.value"
+              size="150px"
+              color="light-red"
+              track-color="grey-3"
+            >
+            <p class="tw-text-black">{{ performance.value }}%</p>
+              </q-circular-progress>
+            <div class="tw-flex tw-gap-3">
+               <div class="tw-flex tw-items-center tw-gap-1">
+                <div class="tw-w-3 tw-h-3 tw-bg-primary-dark-color"></div>
+                <p class="tw-text-xs">{{performance.title.toString().split(" ")[0]}} total score</p>
+               </div>
+               <div class="tw-flex tw-items-center tw-gap-1">
+                <div class="tw-w-3 tw-h-3 tw-bg-blue-800"></div>
+                <p class="tw-text-xs">{{performance.title.toString().split(" ")[0]}} score earned</p>
+                </div>
+            </div>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
     </div>
   </div>
@@ -57,7 +80,24 @@ export default {
                 assignment_grade: '8/10',
                 quiz_grade: '6/10',
                 attendance: '80%'
-              }]
+              }],
+              performance: [
+                {
+                  id: 1,
+                  title: "Attendace perfomance",
+                  value: 80
+                },
+                {
+                  id: 2,
+                  title: "Assignment perfomance",
+                  value: 20
+                },
+                {
+                  id: 3,
+                  title: "Quiz perfomance",
+                  value: 80
+                }
+              ],
               },
               {
                 title: 'Second Semester Performance',
@@ -74,7 +114,24 @@ export default {
                 assignment_grade: '8/10',
                 quiz_grade: '6/10',
                 attendance: '80%'
-              }]
+              }],
+              performance: [
+                {
+                  id: 1,
+                  title: "Attendace perfomance",
+                  value: 80
+                },
+                {
+                  id: 2,
+                  title: "Assignment perfomance",
+                  value: 20
+                },
+                {
+                  id: 3,
+                  title: "Quiz perfomance",
+                  value: 100
+                }
+              ],
               }
             ],
         };
