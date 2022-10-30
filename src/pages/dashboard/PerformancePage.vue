@@ -187,6 +187,154 @@ export default {
             isPassed: true,
           },
         ],
+        all_assingments: [
+          {
+            name: 'First semester',
+            id: 1,
+            months: [
+              {
+                id: 1,
+                name: 'Month 1',
+                assingments: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2022-12-12',
+                    completed: false
+                  },
+      
+                ]
+              },
+              {
+                id: 2,
+                name: 'Month 2',
+                assingments: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              },
+              {
+                id: 3,
+                name: 'Month 3',
+                assingments: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              }
+            ]
+          },
+        
+          ],
+         all_quiz: [
+          {
+            name: 'First semester',
+            id: 1,
+            months: [
+              {
+                id: 1,
+                name: 'Month 1',
+                quizs: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2022-12-12',
+                    completed: false
+                  },
+      
+                ]
+              },
+              {
+                id: 2,
+                name: 'Month 2',
+                quizs: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              },
+              {
+                id: 3,
+                name: 'Month 3',
+                quizs: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              }
+            ]
+          },
+        
+          ],
+         all_attendance: [
+          {
+            name: 'First semester',
+            id: 1,
+            months: [
+              {
+                id: 1,
+                name: 'Month 1',
+                attendance: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2022-12-12',
+                    completed: false
+                  },
+      
+                ]
+              },
+              {
+                id: 2,
+                name: 'Month 2',
+                attendance: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              },
+              {
+                id: 3,
+                name: 'Month 3',
+                attendance: [
+                  {
+                    id: 1,
+                    name: 'Introduction to product design',
+                    description: 'This is the first assignment',
+                    dueDate: '2021-01-01',
+                    completed: false
+                  },
+                ]
+              }
+            ]
+          },
+        
+          ]
+
       }
     },
     methods:{
