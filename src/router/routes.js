@@ -1,5 +1,4 @@
 
-import LoginScreen from "pages/auth/LoginScreen.vue"
 import RegisterScreen from 'pages/auth/RegisterScreen.vue'
 import ForgotPassword from 'pages/auth/ForgotPassword.vue'
 import ResetPassword from 'pages/auth/ResetPassword.vue'
@@ -11,7 +10,7 @@ const routes = [
   component: () => import('layouts/MainLayout.vue'),
   children: [{
     path: '',
-    component: () => LoginScreen,
+    component: () => import("pages/auth/LoginScreen.vue"),
     },
   ]},
   {
