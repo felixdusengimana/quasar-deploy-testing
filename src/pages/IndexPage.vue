@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello there</h1>
+    <h1 class="tw-text-blue-700 tw-font-bold tw-text-3xl">Hello there</h1>
   </div>
 </template>
 
