@@ -6,11 +6,11 @@ import ResetPassword from 'pages/auth/ResetPassword.vue'
 import EnterOTP from 'pages/auth/EnterOTP.vue'
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'login',
-  //   component: () => LoginScreen,
-  // },
+  {
+    path: '/',
+    name: 'login',
+    component: () => LoginScreen,
+  },
   // {
   //   path: '/register',
   //   name: 'register',
