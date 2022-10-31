@@ -7,6 +7,9 @@ import EnterOTP from 'pages/auth/EnterOTP.vue'
 
 const routes = [
   {
+  path: '/auth',
+  component: () => import('layouts/MainLayout.vue'),
+  children: [{
     path: '/',
     name: 'login',
     component: () => LoginScreen,
@@ -31,6 +34,7 @@ const routes = [
   //   name: 'generate-password',
   //   component: ResetPassword,
   // },
+ ]},
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
