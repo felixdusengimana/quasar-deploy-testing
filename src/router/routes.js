@@ -1,42 +1,32 @@
-// screens
-import LoginScreen from "pages/auth/LoginScreen.vue"
-import RegisterScreen from 'pages/auth/RegisterScreen.vue'
-import AssingmentsPage from 'src/pages/dashboard/assignments/AssignmentsPage.vue'
-import SingleAssignmentPage from 'src/pages/dashboard/assignments/SingleAssignmentPage.vue'
-
-import ClassePage from 'src/pages/dashboard/classes/ClassesPage.vue'
-import ClassLessonPage from 'src/pages/dashboard/classes/ClassLessonPage.vue'
-
-import ForgotPassword from 'pages/auth/ForgotPassword.vue'
-import ResetPassword from 'pages/auth/ResetPassword.vue'
-import EnterOTP from 'pages/auth/EnterOTP.vue'
-
 const routes = [
-  {
+ {
+  path: '/',
+  component: ()=> import("layouts/AuthLayout.vue"),
+  children: [{
     path: '/',
     name: 'login',
-    component: () => LoginScreen,
+    component: () => import('pages/auth/LoginScreen.vue'),
   },
   {
     path: '/register',
     name: 'register',
-    component: RegisterScreen,
+    component: ()=>import('pages/auth/RegisterScreen.vue'),
   },
   {
     path: '/forgot-password',
     name: 'forgot-password',
-    component: ForgotPassword,
+    component: ()=>import("pages/auth/ForgotPassword.vue"),
   },
   {
     path: '/enter-otp',
     name: 'enter-otp',
-    component: EnterOTP,
+    component: ()=>import("pages/auth/EnterOTP.vue"),
   },
   {
     path: '/generate-password',
     name: 'generate-password',
-    component: ResetPassword,
-  },
+    component: ()=>import("pages/auth/ResetPassword.vue"),
+  }]},
   {
     path: '/dashboard',
     name: 'student-dashboard',
@@ -69,12 +59,12 @@ const routes = [
       {
         path: '/assignments',
         name: 'assignments',
-        component: () => AssingmentsPage,
+        component: () => import('pages/dashboard/assignments/AssignmentsPage.vue'),
       },
       {
         path: '/classes',
         name: 'classes',
-        component: () => ClassePage,
+        component: () => import("pages/dashboard/classes/ClassesPage.vue"),
       },
     ]
   },
@@ -125,12 +115,12 @@ const routes = [
     {
       path: '/assignments/:id',
       name: 'singleassignments',
-      component: ()=>SingleAssignmentPage,
+      component: ()=>import("pages/dashboard/assignments/SingleAssignmentPage.vue"),
     },
     {
       path: '/classes/lesson/:id',
       name: 'class-lesson',
-      component: () => ClassLessonPage,
+      component: () => import("pages/dashboard/classes/ClassLessonPage.vue"),
     },
     {
       path: '/quiz/:id',
