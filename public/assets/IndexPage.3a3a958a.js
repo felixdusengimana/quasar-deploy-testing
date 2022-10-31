@@ -1,1 +1,0 @@
-import{_ as e,O as t,Q as o,Z as n,Y as s}from"./index.79b122bf.js";const a=t({name:"IndexPage"}),c=s("h1",{class:"tw-text-blue-700 tw-font-bold tw-text-3xl"},"Hello there",-1),r=[c];function _(d,l,p,f,i,x){return o(),n("div",null,r)}var u=e(a,[["render",_]]);export{u as default};
