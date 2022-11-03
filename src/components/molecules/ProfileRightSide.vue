@@ -39,7 +39,7 @@
 
 <script>
 import {getFormattedDate} from 'src/utils/date';
-import pdf from 'pdfvuer';
+import PdfvuerVue from 'pdfvuer';
 
 export default{
   name: 'ProfileRightSide',
@@ -81,7 +81,7 @@ export default{
     },
   },
   components:{
-    pdf
+    // pdf
   }
 };
 </script>
