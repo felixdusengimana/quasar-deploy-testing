@@ -4757,6 +4757,20 @@
   "resolved" "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   "version" "4.0.0"
 
+"pdfjs-dist@2.5.207":
+  "integrity" "sha512-xGDUhnCYPfHy+unMXCLCJtlpZaaZ17Ew3WIL0tnSgKFUZXHAPD49GO9xScyszSsQMoutNDgRb+rfBXIaX/lJbw=="
+  "resolved" "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-2.5.207.tgz"
+  "version" "2.5.207"
+
+"pdfvuer@^2.0.1":
+  "integrity" "sha512-5aEjPoYuaD9uc0Bw2gVadXw9Ez0J1s78xXrryUS1SqKaVVtCcTpyZ1eBllZXz3kD+DUVNhHr9O88ygxfYkLhzQ=="
+  "resolved" "https://registry.npmjs.org/pdfvuer/-/pdfvuer-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "pdfjs-dist" "2.5.207"
+    "raw-loader" "^0.5.1"
+    "vue-resize-sensor" "^2.0.0"
+
 "picocolors@^1.0.0":
   "integrity" "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ=="
   "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
@@ -5244,6 +5258,11 @@
     "http-errors" "2.0.0"
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
+
+"raw-loader@^0.5.1":
+  "integrity" "sha512-sf7oGoLuaYAScB4VGr0tzetsYlS8EJH6qnTCfQ/WVEa89hALQ4RQfCKt5xCyPQKPDUbVUAIP1QsxAwfAjlDp7Q=="
+  "resolved" "https://registry.npmjs.org/raw-loader/-/raw-loader-0.5.1.tgz"
+  "version" "0.5.1"
 
 "read-cache@^1.0.0":
   "integrity" "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA=="
@@ -6278,6 +6297,11 @@
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
 
+"vue-resize-sensor@^2.0.0":
+  "integrity" "sha512-W+y2EAI/BxS4Vlcca9scQv8ifeBFck56DRtSwWJ2H4Cw1GLNUYxiZxUHHkuzuI5JPW/cYtL1bPO5xPyEXx4LmQ=="
+  "resolved" "https://registry.npmjs.org/vue-resize-sensor/-/vue-resize-sensor-2.0.0.tgz"
+  "version" "2.0.0"
+
 "vue-router@^4.0.0", "vue-router@^4.0.12":
   "integrity" "sha512-XvK81bcYglKiayT7/vYAg/f36ExPC4t90R/HIpzrZ5x+17BOWptXLCrEPufGgZeuq68ww4ekSIMBZY1qdUdfjA=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.1.3.tgz"
@@ -6293,7 +6317,7 @@
     "hash-sum" "^1.0.2"
     "loader-utils" "^1.0.2"
 
-"vue@^3.0.0", "vue@^3.2.0", "vue@^3.2.29", "vue@> 3.0.0", "vue@3.2.37":
+"vue@^3.0.0", "vue@^3.1.0", "vue@^3.2.0", "vue@^3.2.29", "vue@> 3.0.0", "vue@3.2.37":
   "integrity" "sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.37.tgz"
   "version" "3.2.37"
