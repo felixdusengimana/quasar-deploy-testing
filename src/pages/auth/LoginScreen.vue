@@ -41,8 +41,7 @@
       </div>
     </q-form>
       <p class="tw-text-[#8692A6] tw-text-base tw-flex tw-items-center tw-my-5 tw-w-fit tw-mx-auto">
-        <img src="~assets/icons/lock.svg" alt="" class="tw-mr-2" />
-        <span>Your Info is safely secured</span>
+        <InfoSafelyStored/>
       </p>
     </div>
   </div>
@@ -51,10 +50,12 @@
 <script>
 import { ref } from 'vue'
 import Navbar from 'components/molecules/Navbar.vue';
+import InfoSafelyStored from 'src/components/atoms/InfoSafelyStored.vue';
 export default {
   components: {
-    Navbar
-  },
+    Navbar,
+    InfoSafelyStored
+},
   setup() {
     const email = ref('')
     const password = ref('')
