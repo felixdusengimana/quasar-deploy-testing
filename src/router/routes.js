@@ -105,7 +105,27 @@ const routes = [
       }
     ]
   },
-
+  //mentor url
+  {
+    path: '/mentor/dashboard',
+    name: 'mentor-dashboard',
+    component: () => import('layouts/MentorLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/mentor/MentorDashboard.vue')
+      },
+      {
+        path: '/mentor/students',
+        name: 'mentor-students',
+        // component: () => import('pages/mentor/MentorStudentsPage.vue'),
+      },
+      {
+        path: '/mentor/classes',
+        name: 'mentor-classes',
+        // component: () => import('pages/mentor/MentorClassesPage.vue'),
+      },
+    ]},
   //with no sidebar
   {
   path: '/dashboard',
