@@ -44,13 +44,13 @@ export default defineComponent({
           {
             name: 'Payments',
             to: '/payment',
-            icon: 'payments',
-          },
-          {
-            name: 'Rewards',
-            to: '/rewards',
             icon: 'rewards',
           },
+          // {
+          //   name: 'Rewards',
+          //   to: '/rewards',
+          //   icon: 'rewards',
+          // },
           {
             name: 'Helps',
             to: '/helps',
