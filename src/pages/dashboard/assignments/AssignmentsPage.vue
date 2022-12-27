@@ -64,7 +64,7 @@
       return {
         all_assingments: [
           {
-            name: 'First semester',
+            name: 'First semester Assignments',
             id: 1,
             months: [
               {
@@ -138,7 +138,7 @@
             ]
           },
           {
-            name: 'Second semester',
+            name: 'Second semester Assignments',
             id: 2,
             months: [
               {
@@ -171,7 +171,7 @@
             ]
           },
           {
-            name: 'Third semester',
+            name: 'Third semester Assignments',
             id: 3,
             months: [
               {
