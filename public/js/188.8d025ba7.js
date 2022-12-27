@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunktesting"]=self["webpackChunktesting"]||[]).push([[188],{89534:(t,e,n)=>{n.r(e),n.d(e,{default:()=>c});var l=n(59835),s=(0,l._)("h1",{class:"tw-font-bold tw-text-2xl tw-leading-[33px] tw-ml-12"},"Quick overview",-1),i=[s];function r(t,e){return(0,l.wg)(),(0,l.iD)("div",null,i)}var u=n(11639);const w={},a=(0,u.Z)(w,[["render",r]]),c=a}}]);

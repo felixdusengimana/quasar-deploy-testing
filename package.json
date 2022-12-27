@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
-    "@quasar/quasar-app-extension-qmediaplayer": "^2.0.0-beta.6",
+    "@quasar/quasar-app-extension-qmediaplayer": "^1.4.1",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",
