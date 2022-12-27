@@ -23,39 +23,44 @@ export default defineComponent({
         links: [
           {
             name: 'Dashboard',
-            to: '/dashboard',
+            to: '/mentor/dashboard',
             icon: 'dashboard',
           },
+          // {
+          //   name: 'Classes',
+          //   to: '/mentor/classes',
+          //   icon: 'classes',
+          // },
           {
-            name: 'Classes',
-            to: '/classes',
-            icon: 'classes',
+            name: "Quiz",
+            to: '/mentor/quiz',
+            icon: 'helps'
           },
           {
             name: 'Assignments',
-            to: '/assignments',
+            to: '/mentor/assignments',
             icon: 'assignment',
           },
           {
-            name: 'Performance',
-            to: '/performance',
-            icon: 'performance',
+            name: 'Mentor',
+            to: '/mentor/teachers',
+            icon: 'user',
           },
-          {
-            name: 'Payments',
-            to: '/payment',
-            icon: 'rewards',
-          },
+          // {
+          //   name: 'Payments',
+          //   to: '/mentor/payment',
+          //   icon: 'rewards',
+          // },
           // {
           //   name: 'Rewards',
           //   to: '/rewards',
           //   icon: 'rewards',
           // },
-          {
-            name: 'Helps',
-            to: '/helps',
-            icon: 'helps',
-          }
+          // {
+          //   name: 'Helps',
+          //   to: '/mentor/helps',
+          //   icon: 'helps',
+          // }
         ]
       }
     },
